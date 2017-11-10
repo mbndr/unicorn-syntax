@@ -1,0 +1,16 @@
+{
+  "name": "unicorn-syntax",
+  "theme": "syntax",
+  "version": "0.0.1",
+  "description": "Atom syntax theme based on gruvbox",
+  "keywords": [
+    "syntax",
+    "theme",
+    "gruvbox"
+  ],
+  "repository": "https://gitlab.com/mbndr/unicorn-syntax",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  }
+}
