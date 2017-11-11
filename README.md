@@ -1,5 +1,11 @@
-# unicorn-syntax theme
+# Atom Unicorn Theme
 
-A short description of your theme.
+> A theme developed for me for each language I use (WIP).
 
-![A screenshot of your theme](https://f.cloud.github.com/assets/69169/2289498/4c3cb0ec-a009-11e3-8dbd-077ee11741e5.gif)
+![A screenshot of your theme](preview.png)
+
+## Todo
+* Resolve `// TODO` in code
+* markdown
+* less
+* makefile
