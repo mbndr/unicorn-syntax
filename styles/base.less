@@ -300,6 +300,24 @@ atom-text-editor {
   }
 }
 
+// markdown
+.markdown-preview:not([data-use-github-style]) {
+    background-color: @syntax-bg;
+
+    h1, h2, h3, h4, h5, h6 {
+        color: @syntax-fg;
+    }
+
+    code, atom-text-editor {
+        color: @syntax-fg;
+        background-color: @syntax-bg;
+        border: 1px solid darken(@syntax-bg, 2%);
+    }
+
+    blockquote {
+        border-color: @syntax-fg;
+    }
+}
 
 // Mini editor
 
