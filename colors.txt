@@ -1,9 +1,9 @@
 @fg: #ebdbb2;
-@bg: #282828;
+@bg: #191919;
 @grey: #928374;
 @dark-grey: #665b50;
 @blue: #83a598;
 @red: #D6461A;
 @purple: #d3869b;
-@green: #99bb26;
+@green: #b8bb26;
 @orange: #fe8019;
