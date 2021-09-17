@@ -17,20 +17,25 @@ let bg = "#191919"
 let green = "#b8bb26"
 let blue = "#83a598"
 let grey = "#928374"
-let dark_grey = "#665b50"
 let red = "#D6461A"
 let purple = "#d3869b"
 let orange = "#fe8019"
 
 " Helper colors
 let bg_light = "#262626"
+let dark_grey = "#665b50"
 
-" GENERAL
+" GENERAL UI
 execute "hi LineNr guibg=" . bg . " guifg=" . dark_grey . " gui=NONE"
 execute "hi Normal guibg=" . bg . " guifg=" . fg . " gui=NONE"
 execute "hi EndOfBuffer guibg=" . bg . " guifg=" . blue . " gui=NONE"
+execute "hi CursorLine guibg=" . bg . " gui=NONE"
+execute "hi CursorLineNr guibg=" . bg_light . " guifg=" . orange . " gui=NONE"
+execute "hi ColorColumn guibg=" . bg_light
+execute "hi StatusLine guibg=" . bg_light . " guifg=" . purple . " gui=NONE"
+execute "hi Todo guibg=" . bg_light . " guifg=" . orange . " gui=bold"
 
-" GENERAL
+" GENERAL SYNTAX
 execute "hi Comment guibg=" . bg . " guifg=" . grey . " gui=NONE"
 
 execute "hi Constant guibg=" . bg . " guifg=" . purple . " gui=NONE"
@@ -75,3 +80,4 @@ execute "hi markdownCode guibg=" . bg_light . " guifg=" . fg . " gui=NONE"
 
 " MESON
 execute "hi mesonBuiltin guibg=" . bg . " guifg=" . blue . " gui=NONE"
+
