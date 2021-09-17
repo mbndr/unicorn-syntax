@@ -72,3 +72,6 @@ execute "hi markdownLinkText guibg=" . bg . " guifg=" . green . " gui=NONE"
 execute "hi markdownUrl guibg=" . bg . " guifg=" . orange . " gui=NONE"
 execute "hi markdownCodeDelimiter guibg=" . bg . " guifg=" . purple . " gui=NONE"
 execute "hi markdownCode guibg=" . bg_light . " guifg=" . fg . " gui=NONE"
+
+" MESON
+execute "hi mesonBuiltin guibg=" . bg . " guifg=" . blue . " gui=NONE"
