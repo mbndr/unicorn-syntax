@@ -1,11 +1,7 @@
-# Atom Unicorn Theme
+# Unicorn Theme
 
-> A theme developed for me for each language I use (WIP).
+Not a working color scheme yet, but something I like. Great color scheme can also be simple (just a few colors) and does not have to have a different color for each different token type...
 
-![A screenshot of your theme](preview.png)
+Planning to do a color scheme for (neo)vim.
 
-## Todo
-* Resolve `// TODO` in code
-* markdown
-* less
-* makefile
+![preview](preview.png)
