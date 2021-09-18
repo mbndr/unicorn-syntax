@@ -41,6 +41,9 @@ execute "hi Visual guibg=" . blue . " guifg=" . bg . " gui=NONE"
 execute "hi SpellBad gui=undercurl guisp=" . red 
 execute "hi VertSplit gui=NONE guibg=" . bg . " guifg=" . dark_grey
 execute "hi ModeMsg gui=NONE guibg=" . bg . " guifg=" . purple
+" MENU
+execute "hi NormalFloat guibg=" . bg_light . " guifg=" . blue . " gui=NONE"
+
 
 " GENERAL SYNTAX
 execute "hi Comment guibg=" . bg . " guifg=" . grey . " gui=NONE"
