@@ -95,6 +95,8 @@ execute "hi TelescopeBorder guibg=" . bg . " guifg= " blue . " gui=NONE"
 execute "hi NvimTreeNormal guifg=" . fg 
 execute "hi NvimTreeFolderName guifg=" . blue 
 execute "hi NvimTreeOpenedFolderName guifg=" . blue 
+" TODO: this does not work
+execute "hi NvimTreeOpenedFile guibg=" . bg_light 
 execute "hi NvimTreeIndentMarker guifg=" . bg_light
 execute "hi NvimTreeFolderIcon guifg=" . blue 
 execute "hi NvimTreeRootFolder guifg=" . dark_grey 
