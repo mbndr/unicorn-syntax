@@ -113,6 +113,7 @@ execute "hi NvimTreeGitNew guifg=" . green
 execute "hi NvimTreeGitStaged guifg=" . green 
 execute "hi NvimTreeGitNew guifg=" . purple 
 execute "hi NvimTreeExecFile guifg=" . fg . " gui=NONE"
+
 execute "hi LspDiagnosticsError guifg=" . red . " gui=NONE"
 execute "hi LspDiagnosticsWarning guifg=" . orange . " gui=NONE"
 execute "hi LspDiagnosticsInformation guifg=" . blue . " gui=NONE"
@@ -121,4 +122,8 @@ execute "hi LspDiagnosticsDefaultError guifg=" . red . " gui=NONE"
 execute "hi LspDiagnosticsDefaultWarning guifg=" . orange . " gui=NONE"
 execute "hi LspDiagnosticsDefaultInformation guifg=" . blue . " gui=NONE"
 execute "hi LspDiagnosticsDefaultHint guifg=" . purple . " gui=NONE"
+execute "hi LspDiagnosticsUnderlineError guisp=" . red . " gui=NONE"
+execute "hi LspDiagnosticsUnderlineWarning guisp=" . orange . " gui=NONE"
+execute "hi LspDiagnosticsUnderlineInformation guisp=" . blue . " gui=NONE"
+execute "hi LspDiagnosticsUnderlineHint guisp=" . purple . " gui=NONE"
 
