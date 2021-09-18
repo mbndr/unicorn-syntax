@@ -45,6 +45,7 @@ execute "hi ModeMsg gui=NONE guibg=" . bg . " guifg=" . purple
 execute "hi NormalFloat guibg=" . bg_light . " guifg=" . blue . " gui=NONE"
 execute "hi Pmenu guibg=" . bg_light . " guifg=" . blue . " gui=NONE"
 execute "hi PmenuSel guibg=" . fg_dark . " guifg=" . bg . " gui=NONE"
+execute "hi SignColumn guibg=" . bg . " guifg=" . fg . " gui=NONE"
 
 
 " GENERAL SYNTAX
@@ -112,6 +113,8 @@ execute "hi NvimTreeGitNew guifg=" . green
 execute "hi NvimTreeGitStaged guifg=" . green 
 execute "hi NvimTreeGitNew guifg=" . purple 
 execute "hi NvimTreeExecFile guifg=" . fg . " gui=NONE"
-
-" TODO: LSP diagnostics
+execute "hi LspDiagnosticsError guifg=" . red . " gui=NONE"
+execute "hi LspDiagnosticsWarning guifg=" . orange . " gui=NONE"
+execute "hi LspDiagnosticsInformation guifg=" . blue . " gui=NONE"
+execute "hi LspDiagnosticsHint guifg=" . purple . " gui=NONE"
 
