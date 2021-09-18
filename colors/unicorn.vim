@@ -24,6 +24,7 @@ let orange = "#fe8019"
 " Helper colors
 let bg_light = "#262626"
 let dark_grey = "#665b50"
+let fg_dark = "#91876d"
 
 " GENERAL UI
 execute "hi LineNr guibg=" . bg . " guifg=" . dark_grey . " gui=NONE"
@@ -32,7 +33,7 @@ execute "hi EndOfBuffer guibg=" . bg . " guifg=" . blue . " gui=NONE"
 execute "hi CursorLine guibg=" . bg . " gui=NONE"
 execute "hi CursorLineNr guibg=" . bg_light . " guifg=" . orange . " gui=NONE"
 execute "hi ColorColumn guibg=" . bg_light
-execute "hi StatusLine guibg=" . fg . " guifg=" . bg . " gui=NONE"
+execute "hi StatusLine guibg=" . fg_dark . " guifg=" . bg . " gui=NONE"
 execute "hi StatusLineNC guibg=" . bg_light . " guifg=" . fg . " gui=NONE"
 execute "hi Todo guibg=" . bg_light . " guifg=" . orange . " gui=bold"
 execute "hi NonText guibg=" . bg . " guifg=" . green . " gui=NONE"
@@ -97,6 +98,7 @@ execute "hi NvimTreeIndentMarker guifg=" . bg_light
 execute "hi NvimTreeFolderIcon guifg=" . blue 
 execute "hi NvimTreeRootFolder guifg=" . dark_grey 
 execute "hi NvimTreeSpecialFile guifg=" . green 
+execute "hi NvimTreeImageFile guifg=" . fg . " gui=NONE"
 execute "hi NvimTreeGitDirty guifg=" . orange
 execute "hi NvimTreeGitNew guifg=" . green
 execute "hi NvimTreeGitStaged guifg=" . green 
