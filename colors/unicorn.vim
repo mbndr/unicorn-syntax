@@ -111,6 +111,7 @@ execute "hi NvimTreeGitDirty guifg=" . orange
 execute "hi NvimTreeGitNew guifg=" . green
 execute "hi NvimTreeGitStaged guifg=" . green 
 execute "hi NvimTreeGitNew guifg=" . purple 
+execute "hi NvimTreeExecFile guifg=" . fg . " gui=NONE"
 
 " TODO: LSP diagnostics
 
