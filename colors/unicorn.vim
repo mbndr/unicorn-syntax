@@ -117,4 +117,8 @@ execute "hi LspDiagnosticsError guifg=" . red . " gui=NONE"
 execute "hi LspDiagnosticsWarning guifg=" . orange . " gui=NONE"
 execute "hi LspDiagnosticsInformation guifg=" . blue . " gui=NONE"
 execute "hi LspDiagnosticsHint guifg=" . purple . " gui=NONE"
+execute "hi LspDiagnosticsDefaultError guifg=" . red . " gui=NONE"
+execute "hi LspDiagnosticsDefaultWarning guifg=" . orange . " gui=NONE"
+execute "hi LspDiagnosticsDefaultInformation guifg=" . blue . " gui=NONE"
+execute "hi LspDiagnosticsDefaultHint guifg=" . purple . " gui=NONE"
 
