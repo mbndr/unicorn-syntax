@@ -43,6 +43,8 @@ execute "hi VertSplit gui=NONE guibg=" . bg . " guifg=" . dark_grey
 execute "hi ModeMsg gui=NONE guibg=" . bg . " guifg=" . purple
 " MENU
 execute "hi NormalFloat guibg=" . bg_light . " guifg=" . blue . " gui=NONE"
+execute "hi Pmenu guibg=" . bg_light . " guifg=" . blue . " gui=NONE"
+execute "hi PmenuSel guibg=" . fg_dark . " guifg=" . bg . " gui=NONE"
 
 
 " GENERAL SYNTAX
