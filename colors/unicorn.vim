@@ -32,11 +32,13 @@ execute "hi EndOfBuffer guibg=" . bg . " guifg=" . blue . " gui=NONE"
 execute "hi CursorLine guibg=" . bg . " gui=NONE"
 execute "hi CursorLineNr guibg=" . bg_light . " guifg=" . orange . " gui=NONE"
 execute "hi ColorColumn guibg=" . bg_light
-execute "hi StatusLine guibg=" . bg_light . " guifg=" . purple . " gui=NONE"
+execute "hi StatusLine guibg=" . fg . " guifg=" . bg . " gui=NONE"
+execute "hi StatusLineNC guibg=" . bg_light . " guifg=" . fg . " gui=NONE"
 execute "hi Todo guibg=" . bg_light . " guifg=" . orange . " gui=bold"
 execute "hi NonText guibg=" . bg . " guifg=" . green . " gui=NONE"
 execute "hi Visual guibg=" . blue . " guifg=" . bg . " gui=NONE"
 execute "hi SpellBad gui=undercurl guisp=" . red 
+execute "hi VertSplit gui=NONE guibg=" . bg . " guifg=" . dark_grey
 
 " GENERAL SYNTAX
 execute "hi Comment guibg=" . bg . " guifg=" . grey . " gui=NONE"
@@ -86,3 +88,19 @@ execute "hi mesonBuiltin guibg=" . bg . " guifg=" . blue . " gui=NONE"
 
 " TELESCOPE
 execute "hi TelescopeBorder guibg=" . bg . " guifg= " blue . " gui=NONE"
+
+" NVIMTREE
+execute "hi NvimTreeNormal guifg=" . fg 
+execute "hi NvimTreeFolderName guifg=" . blue 
+execute "hi NvimTreeOpenedFolderName guifg=" . blue 
+execute "hi NvimTreeIndentMarker guifg=" . bg_light
+execute "hi NvimTreeFolderIcon guifg=" . blue 
+execute "hi NvimTreeRootFolder guifg=" . dark_grey 
+execute "hi NvimTreeSpecialFile guifg=" . green 
+execute "hi NvimTreeGitDirty guifg=" . orange
+execute "hi NvimTreeGitNew guifg=" . green
+execute "hi NvimTreeGitStaged guifg=" . green 
+execute "hi NvimTreeGitNew guifg=" . purple 
+
+" TODO: LSP diagnostics
+

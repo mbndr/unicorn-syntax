@@ -9,9 +9,11 @@ This is currently only for personal use and better highlighting for a language i
 ## C
 ![Preview C](preview/c.png)
 
-
 ## Markdown
 ![Preview Markdown](preview/md.png)
 
 ## Meson
 ![Preview Meson](preview/meson.png)
+
+## Nvimtree
+![Preview Nvimtree](preview/nvimtree.png)
