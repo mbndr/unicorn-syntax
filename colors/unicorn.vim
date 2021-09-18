@@ -122,8 +122,8 @@ execute "hi LspDiagnosticsDefaultError guifg=" . red . " gui=NONE"
 execute "hi LspDiagnosticsDefaultWarning guifg=" . orange . " gui=NONE"
 execute "hi LspDiagnosticsDefaultInformation guifg=" . blue . " gui=NONE"
 execute "hi LspDiagnosticsDefaultHint guifg=" . purple . " gui=NONE"
-execute "hi LspDiagnosticsUnderlineError guisp=" . red . " gui=NONE"
-execute "hi LspDiagnosticsUnderlineWarning guisp=" . orange . " gui=NONE"
-execute "hi LspDiagnosticsUnderlineInformation guisp=" . blue . " gui=NONE"
-execute "hi LspDiagnosticsUnderlineHint guisp=" . purple . " gui=NONE"
+execute "hi LspDiagnosticsUnderlineError gui=underline guisp=" . red
+execute "hi LspDiagnosticsUnderlineWarning gui=underline guisp=" . orange
+execute "hi LspDiagnosticsUnderlineInformation gui=underline guisp=" . blue
+execute "hi LspDiagnosticsUnderlineHint gui=underline guisp=" . purple
 
