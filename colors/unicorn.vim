@@ -34,6 +34,9 @@ execute "hi CursorLineNr guibg=" . bg_light . " guifg=" . orange . " gui=NONE"
 execute "hi ColorColumn guibg=" . bg_light
 execute "hi StatusLine guibg=" . bg_light . " guifg=" . purple . " gui=NONE"
 execute "hi Todo guibg=" . bg_light . " guifg=" . orange . " gui=bold"
+execute "hi NonText guibg=" . bg . " guifg=" . green . " gui=NONE"
+execute "hi Visual guibg=" . blue . " guifg=" . bg . " gui=NONE"
+execute "hi SpellBad gui=undercurl guisp=" . red 
 
 " GENERAL SYNTAX
 execute "hi Comment guibg=" . bg . " guifg=" . grey . " gui=NONE"
@@ -81,3 +84,5 @@ execute "hi markdownCode guibg=" . bg_light . " guifg=" . fg . " gui=NONE"
 " MESON
 execute "hi mesonBuiltin guibg=" . bg . " guifg=" . blue . " gui=NONE"
 
+" TELESCOPE
+execute "hi TelescopeBorder guibg=" . bg . " guifg= " blue . " gui=NONE"
