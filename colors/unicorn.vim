@@ -101,6 +101,7 @@ execute "hi makeTarget guibg=" . bg . " guifg=" . green . " gui=NONE"
 execute "hi TelescopeBorder guibg=" . bg . " guifg= " blue . " gui=NONE"
 
 " NVIMTREE
+execute "hi Directory guifg=" . blue 
 execute "hi NvimTreeNormal guifg=" . fg 
 execute "hi NvimTreeFolderName guifg=" . blue 
 execute "hi NvimTreeOpenedFolderName guifg=" . blue 
