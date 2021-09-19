@@ -42,6 +42,8 @@ execute "hi SpellBad gui=undercurl guisp=" . red
 execute "hi VertSplit gui=NONE guibg=" . bg . " guifg=" . dark_grey
 execute "hi ModeMsg gui=NONE guibg=" . bg . " guifg=" . purple
 execute "hi MatchParen gui=bold guibg=" . bg_light . " guifg=" . orange
+execute "hi Error guibg=" . red . " guifg=" . fg
+execute "hi ErrorMsg guibg=" . red . " guifg=" . fg
 " MENU
 execute "hi NormalFloat guibg=" . bg_light . " guifg=" . blue . " gui=NONE"
 execute "hi Pmenu guibg=" . bg_light . " guifg=" . blue . " gui=NONE"
