@@ -41,6 +41,7 @@ execute "hi Visual guibg=" . blue . " guifg=" . bg . " gui=NONE"
 execute "hi SpellBad gui=undercurl guisp=" . red 
 execute "hi VertSplit gui=NONE guibg=" . bg . " guifg=" . dark_grey
 execute "hi ModeMsg gui=NONE guibg=" . bg . " guifg=" . purple
+execute "hi MatchParen gui=bold guibg=" . bg_light . " guifg=" . orange
 " MENU
 execute "hi NormalFloat guibg=" . bg_light . " guifg=" . blue . " gui=NONE"
 execute "hi Pmenu guibg=" . bg_light . " guifg=" . blue . " gui=NONE"
