@@ -15,5 +15,9 @@ This is currently only for personal use and better highlighting for a language i
 ## Meson
 ![Preview Meson](preview/meson.png)
 
+## Makefile
+![Preview Make](preview/make.png)
+
 ## Nvimtree
 ![Preview Nvimtree](preview/nvimtree.png)
+

@@ -92,8 +92,10 @@ execute "hi markdownUrl guibg=" . bg . " guifg=" . orange . " gui=NONE"
 execute "hi markdownCodeDelimiter guibg=" . bg . " guifg=" . purple . " gui=NONE"
 execute "hi markdownCode guibg=" . bg_light . " guifg=" . fg . " gui=NONE"
 
-" MESON
+" MESON and MAKE
 execute "hi mesonBuiltin guibg=" . bg . " guifg=" . blue . " gui=NONE"
+execute "hi makeTarget guibg=" . bg . " guifg=" . green . " gui=NONE"
+
 
 " TELESCOPE
 execute "hi TelescopeBorder guibg=" . bg . " guifg= " blue . " gui=NONE"
