@@ -21,6 +21,8 @@ let red = "#D6461A"
 let purple = "#d3869b"
 let orange = "#fe8019"
 
+let yellow = "#f6d32d"
+
 " Helper colors
 let bg_light = "#262626"
 let dark_grey = "#665b50"
@@ -44,6 +46,7 @@ execute "hi ModeMsg gui=NONE guibg=" . bg . " guifg=" . purple
 execute "hi MatchParen gui=bold guibg=" . bg_light . " guifg=" . orange
 execute "hi Error guibg=" . red . " guifg=" . fg
 execute "hi ErrorMsg guibg=" . red . " guifg=" . fg
+execute "hi Search guibg=" . yellow . " guifg=" . bg
 " MENU
 execute "hi NormalFloat guibg=" . bg_light . " guifg=" . blue . " gui=NONE"
 execute "hi Pmenu guibg=" . bg_light . " guifg=" . blue . " gui=NONE"
