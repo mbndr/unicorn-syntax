@@ -48,6 +48,7 @@ execute "hi Error guibg=" . red . " guifg=" . fg
 execute "hi ErrorMsg guibg=" . red . " guifg=" . fg
 execute "hi Search guibg=" . yellow . " guifg=" . bg
 execute "hi Folded guibg=" . bg_light . " guifg=" . fg_dark
+execute "hi Question guibg=" . bg . " guifg=" . blue . " gui=bold"
 " MENU
 execute "hi NormalFloat guibg=" . bg_light . " guifg=" . blue . " gui=NONE"
 execute "hi Pmenu guibg=" . bg_light . " guifg=" . blue . " gui=NONE"
