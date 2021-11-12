@@ -9,6 +9,8 @@ if exists("syntax_on")
     syntax reset
 endif
 
+" :so $VIMRUNTIME/syntax/hitest.vim
+
 let g:colors_name = "unicorn"
 
 " Basic colors
@@ -80,6 +82,7 @@ execute "hi Type guibg=" . bg . " guifg=" . blue . " gui=NONE"
 
 execute "hi Special guibg=" . bg . " guifg=" . purple . " gui=NONE"
 " ... others inherit ...
+execute "hi Title guibg=" . bg . " guifg=" . purple . " gui=NONE"
 
 " MARKDOWN
 execute "hi markdownH1 guibg=" . bg . " guifg=" . blue . " gui=NONE"
