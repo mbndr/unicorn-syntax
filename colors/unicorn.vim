@@ -106,6 +106,8 @@ execute "hi markdownCode guibg=" . bg_light . " guifg=" . fg . " gui=NONE"
 execute "hi mesonBuiltin guibg=" . bg . " guifg=" . blue . " gui=NONE"
 execute "hi makeTarget guibg=" . bg . " guifg=" . green . " gui=NONE"
 
+" LaTeX
+execute "hi texInputFile guibg=" . bg . " guifg=" . green . " gui=NONE"
 
 " TELESCOPE
 execute "hi TelescopeBorder guibg=" . bg . " guifg= " blue . " gui=NONE"
