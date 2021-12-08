@@ -144,3 +144,5 @@ execute "hi LspDiagnosticsUnderlineWarning gui=underline guisp=" . orange
 execute "hi LspDiagnosticsUnderlineInformation gui=underline guisp=" . blue
 execute "hi LspDiagnosticsUnderlineHint gui=underline guisp=" . purple
 
+execute "hi DiagnosticError guifg=" . red
+execute "hi DiagnosticUnderlineError gui=underline guisp=" . red
