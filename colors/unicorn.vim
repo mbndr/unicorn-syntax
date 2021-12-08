@@ -48,6 +48,7 @@ execute "hi ModeMsg gui=NONE guibg=" . bg . " guifg=" . purple
 execute "hi MatchParen gui=bold guibg=" . bg_light . " guifg=" . orange
 execute "hi Error guibg=" . red . " guifg=" . fg
 execute "hi ErrorMsg guibg=" . red . " guifg=" . fg
+execute "hi WarningMsg guibg=" . bg . " guifg=" . red
 execute "hi Search guibg=" . yellow . " guifg=" . bg
 execute "hi Folded guibg=" . bg_light . " guifg=" . fg_dark
 execute "hi Question guibg=" . bg . " guifg=" . blue . " gui=bold"
