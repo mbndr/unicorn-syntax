@@ -68,8 +68,8 @@ let s:none = "NONE"
                 \Search: #{guibg: g:unicorn_yellow, guifg: g:unicorn_black},
                 \Folded: #{guibg: g:unicorn_black_light, guifg: g:unicorn_white_dark},
                 \Question: #{guifg: g:unicorn_blue},
-                \NormalFloat: #{guibg: g:unicorn_black_light, guifg: blue},
-                \Pmenu: #{guibg: g:unicorn_black_light, guifg: blue},
+                \NormalFloat: #{guibg: g:unicorn_black_light, guifg: g:unicorn_blue},
+                \Pmenu: #{guibg: g:unicorn_black_light, guifg: g:unicorn_blue},
                 \PmenuSel: #{guibg: g:unicorn_white_dark, guifg: g:unicorn_black},
                 \SignColumn: #{},
                 \
