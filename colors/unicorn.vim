@@ -137,6 +137,10 @@ let s:none = "NONE"
                 \LspDiagnosticsUnderlineWarning: #{guisp: g:unicorn_yellow, gui: "underline"},
                 \LspDiagnosticsUnderlineInformation: #{guisp: g:unicorn_blue, gui: "underline"},
                 \LspDiagnosticsUnderlineHint: #{guisp: g:unicorn_purple, gui: "underline"},
+                \DiagnosticUnderlineError: #{guisp: g:unicorn_red, gui: "underline"},
+                \DiagnosticUnderlineWarn: #{guisp: g:unicorn_yellow, gui: "underline"},
+                \DiagnosticUnderlineInfo: #{guisp: g:unicorn_blue, gui: "underline"},
+                \DiagnosticUnderlineHint: #{guisp: g:unicorn_purple, gui: "underline"},
                 \
                 \DiagnosticError: #{guifg: g:unicorn_red},
                 \DiagnosticUnderline: #{guisp: g:unicorn_red, gui: "underline"},
@@ -144,7 +148,7 @@ let s:none = "NONE"
 " }}}
 
 " Setup highlights, designed that light scheme could be added easily
-function UnicornSetup()
+function! UnicornSetup()
     let l:colors = s:dark_colors
     let l:bg = s:dark_bg
     let l:fg = s:dark_fg
