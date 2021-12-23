@@ -141,9 +141,12 @@ let s:none = "NONE"
                 \DiagnosticUnderlineWarn: #{guisp: g:unicorn_yellow, gui: "underline"},
                 \DiagnosticUnderlineInfo: #{guisp: g:unicorn_blue, gui: "underline"},
                 \DiagnosticUnderlineHint: #{guisp: g:unicorn_purple, gui: "underline"},
-                \
                 \DiagnosticError: #{guifg: g:unicorn_red},
                 \DiagnosticUnderline: #{guisp: g:unicorn_red, gui: "underline"},
+                \
+                \DiffAdd: #{guifg: g:unicorn_green, guibg: g:unicorn_black},
+                \DiffChange: #{guifg: g:unicorn_blue, guibg: g:unicorn_black},
+                \DiffDelete: #{guifg: g:unicorn_red, guibg: g:unicorn_black},
                 \}
 " }}}
 
