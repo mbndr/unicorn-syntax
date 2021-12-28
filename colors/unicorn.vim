@@ -148,6 +148,11 @@ let s:none = "NONE"
                 \DiffAdd: #{guifg: g:unicorn_green, guibg: g:unicorn_black},
                 \DiffChange: #{guifg: g:unicorn_blue, guibg: g:unicorn_black},
                 \DiffDelete: #{guifg: g:unicorn_red, guibg: g:unicorn_black},
+                \
+                \Underlined: #{guifg: g:unicorn_blue, gui: "underline"},
+                \tutorLink: #{guifg: g:unicorn_blue, gui: "underline"},
+                \tutorOK: #{guifg: g:unicorn_green, gui: "bold"},
+                \tutorX: #{guifg: g:unicorn_red, gui: "bold"},
                 \}
 " }}}
 
