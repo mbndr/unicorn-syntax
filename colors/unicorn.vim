@@ -2,6 +2,7 @@
 " :so $VIMRUNTIME/syntax/hitest.vim
 " TODO: different colors for each lsp completion type
 " TODO: other color in nvimtree
+" TODO: rewrite so that not no bg means default bg, inherit
 
 if !has("gui_running") && &t_Co < 256
     finish
@@ -34,6 +35,9 @@ let s:none = "NONE"
     let g:unicorn_black_light = "#262626"
     let g:unicorn_dark_grey = "#665b50"
     let g:unicorn_white_dark = "#91876d"
+
+    " Background for file tree
+    let g:unicorn_tree_bg = "#131313"
 " }}}
 
 " Dark colors {{{
@@ -43,8 +47,8 @@ let s:none = "NONE"
                 \Normal: #{},
                 \SpecialKey: #{guifg: g:unicorn_yellow},
                 \LineNr: #{guifg: g:unicorn_dark_grey},
-                \EndOfBuffer: #{guifg: g:unicorn_blue},
-                \CursorLine: #{guifg: s:none},
+                \EndOfBuffer: #{guifg: g:unicorn_blue, guibg: s:none},
+                \CursorLine: #{guifg: s:none, guibg: s:none},
                 \CursorLineNr: #{guibg: g:unicorn_black_light, guifg: g:unicorn_blue},
                 \ColorColumn: #{guibg: g:unicorn_black_light},
                 \Todo: #{guibg: g:unicorn_black_light, guifg: g:unicorn_orange, gui: "bold"},
@@ -115,18 +119,18 @@ let s:none = "NONE"
                 \TelescopeBorder: #{guifg: g:unicorn_blue},
                 \
                 \Directory: #{guifg: g:unicorn_blue},
-                \NvimTreeNormal: #{guifg: g:unicorn_white},
-                \NvimTreeFolderName: #{guifg: g:unicorn_blue},
-                \NvimTreeOpenedFolderName: #{guifg: g:unicorn_blue},
-                \NvimTreeIndentMarker: #{guifg: g:unicorn_black_light},
-                \NvimTreeFolderIcon: #{guifg: g:unicorn_blue},
-                \NvimTreeRootFolder: #{guifg: g:unicorn_dark_grey},
-                \NvimTreeSpecialFile: #{guifg: g:unicorn_green},
-                \NvimTreeImageFile: #{},
-                \NvimTreeGitDirty: #{guifg: g:unicorn_orange},
-                \NvimTreeGitNew: #{guifg: g:unicorn_yellow},
-                \NvimTreeGitStaged: #{guifg: g:unicorn_green},
-                \NvimTreeGitDeleted: #{guifg: g:unicorn_red},
+                \NvimTreeNormal: #{guifg: g:unicorn_white, guibg: g:unicorn_tree_bg},
+                \NvimTreeFolderName: #{guifg: g:unicorn_blue, guibg: g:unicorn_tree_bg},
+                \NvimTreeOpenedFolderName: #{guifg: g:unicorn_blue, guibg: g:unicorn_tree_bg},
+                \NvimTreeIndentMarker: #{guifg: g:unicorn_black_light, guibg: g:unicorn_tree_bg},
+                \NvimTreeFolderIcon: #{guifg: g:unicorn_blue, guibg: g:unicorn_tree_bg},
+                \NvimTreeRootFolder: #{guifg: g:unicorn_dark_grey, guibg: g:unicorn_tree_bg},
+                \NvimTreeSpecialFile: #{guifg: g:unicorn_green, guibg: g:unicorn_tree_bg},
+                \NvimTreeImageFile: #{guibg: g:unicorn_tree_bg},
+                \NvimTreeGitDirty: #{guifg: g:unicorn_orange, guibg: g:unicorn_tree_bg},
+                \NvimTreeGitNew: #{guifg: g:unicorn_yellow, guibg: g:unicorn_tree_bg},
+                \NvimTreeGitStaged: #{guifg: g:unicorn_green, guibg: g:unicorn_tree_bg},
+                \NvimTreeGitDeleted: #{guifg: g:unicorn_red, guibg: g:unicorn_tree_bg},
                 \
                 \LspDiagnosticsError: #{guifg: g:unicorn_red},
                 \LspDiagnosticsWarning: #{guifg: g:unicorn_yellow},
