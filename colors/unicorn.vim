@@ -1,5 +1,7 @@
 " Script for showing all color groups
 " :so $VIMRUNTIME/syntax/hitest.vim
+" TODO: different colors for each lsp completion type
+" TODO: other color in nvimtree
 
 if !has("gui_running") && &t_Co < 256
     finish
@@ -153,6 +155,8 @@ let s:none = "NONE"
                 \tutorLink: #{guifg: g:unicorn_blue, gui: "underline"},
                 \tutorOK: #{guifg: g:unicorn_green, gui: "bold"},
                 \tutorX: #{guifg: g:unicorn_red, gui: "bold"},
+                \
+                \dartIdentifier: #{guifg: g:unicorn_blue},
                 \}
 " }}}
 
