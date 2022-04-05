@@ -1,8 +1,5 @@
-" Script for showing all color groups
-" :so $VIMRUNTIME/syntax/hitest.vim
-" TODO: different colors for each lsp completion type
-" TODO: other color in nvimtree
-" TODO: rewrite so that not no bg means default bg, inherit
+" Unicorn syntax theme (https://github.com/mbndr/unicorn_syntax)
+" This file was generated (NO NOT EDIT)
 
 if !has("gui_running") && &t_Co < 256
     finish
@@ -17,176 +14,110 @@ endif
 
 let g:colors_name = "unicorn"
 
-let s:none = "NONE"
-
-" Colors {{{
-    let g:unicorn_white = "#ebdbb2"
-    let g:unicorn_black = "#191919"
-    let g:unicorn_green = "#b8bb26"
-    "let g:unicorn_blue = "#83a598"
-    let g:unicorn_blue = "#719386"
-    let g:unicorn_grey = "#928374"
-    let g:unicorn_red = "#D6461A"
-    let g:unicorn_purple = "#d3869b"
-    let g:unicorn_orange = "#fe8019"
-    let g:unicorn_yellow = "#f6d32d"
-
-    " Helpers
-    let g:unicorn_black_light = "#262626"
-    let g:unicorn_dark_grey = "#665b50"
-    let g:unicorn_white_dark = "#91876d"
-
-    " Background for file tree
-    let g:unicorn_tree_bg = "#131313"
-" }}}
-
-" Dark colors {{{
-    let s:dark_bg = g:unicorn_black
-    let s:dark_fg = g:unicorn_white
-    let s:dark_colors = #{
-                \Normal: #{},
-                \SpecialKey: #{guifg: g:unicorn_yellow},
-                \LineNr: #{guifg: g:unicorn_dark_grey},
-                \EndOfBuffer: #{guifg: g:unicorn_blue, guibg: s:none},
-                \CursorLine: #{guifg: s:none, guibg: s:none},
-                \CursorLineNr: #{guibg: g:unicorn_black_light, guifg: g:unicorn_blue},
-                \ColorColumn: #{guibg: g:unicorn_black_light},
-                \Todo: #{guibg: g:unicorn_black_light, guifg: g:unicorn_orange, gui: "bold"},
-                \NonText: #{guifg: g:unicorn_green},
-                \Visual: #{guibg: g:unicorn_blue, guifg: g:unicorn_black},
-                \SpellBad: #{gui: "undercurl", guisp: g:unicorn_orange, guifg: s:none},
-                \SpellCap: #{gui: "undercurl", guisp: g:unicorn_blue, guifg: s:none},
-                \SpellRare: #{gui: "undercurl", guisp: g:unicorn_purple, guifg: s:none},
-                \SpellLocal: #{gui: "undercurl", guisp: g:unicorn_yellow, guifg: s:none},
-                \StatusLine: #{guibg: g:unicorn_black_light, guifg: g:unicorn_white},
-                \StatusLineNC: #{guibg: g:unicorn_black_light, guifg: g:unicorn_white_dark},
-                \ModeMsg: #{guifg: g:unicorn_purple},
-                \MoreMsg: #{guifg: g:unicorn_blue},
-                \VertSplit: #{guifg: g:unicorn_dark_grey},
-                \MatchParen: #{gui: "bold", guibg: g:unicorn_black_light, guifg: g:unicorn_orange},
-                \NvimInternalError: #{guibg: g:unicorn_red, guifg: g:unicorn_black},
-                \Error: #{guibg: g:unicorn_red, guifg: g:unicorn_white},
-                \ErrorMsg: #{guibg: g:unicorn_red, guifg: g:unicorn_white},
-                \RedrawDebugRecompose: #{guibg: g:unicorn_red, guifg: g:unicorn_white},
-                \RedrawDebugComposed: #{guibg: g:unicorn_green, guifg: g:unicorn_black},
-                \RedrawDebugClear: #{guibg: g:unicorn_yellow, guifg: g:unicorn_black},
-                \DiffText: #{guibg: g:unicorn_red, guifg: g:unicorn_white},
-                \WarningMsg: #{guifg: g:unicorn_red},
-                \Search: #{guibg: g:unicorn_yellow, guifg: g:unicorn_black},
-                \Folded: #{guibg: g:unicorn_black_light, guifg: g:unicorn_white_dark},
-                \Question: #{guifg: g:unicorn_blue},
-                \NormalFloat: #{guibg: g:unicorn_black_light, guifg: g:unicorn_blue},
-                \Pmenu: #{guibg: g:unicorn_black_light, guifg: g:unicorn_blue},
-                \PmenuSel: #{guibg: g:unicorn_white_dark, guifg: g:unicorn_black},
-                \SignColumn: #{},
-                \
-                \Comment: #{guifg: g:unicorn_grey},
-                \Constant: #{guifg: g:unicorn_purple},
-                \String: #{guifg: g:unicorn_green},
-                \Character: #{guifg: g:unicorn_blue},
-                \Number: #{guifg: g:unicorn_orange},
-                \Boolean: #{guifg: g:unicorn_purple},
-                \Float: #{guifg: g:unicorn_red},
-                \Identifier: #{},
-                \Statement: #{guifg: g:unicorn_blue},
-                \PreProc: #{guifg: g:unicorn_blue},
-                \Type: #{guifg: g:unicorn_blue},
-                \Special: #{guifg: g:unicorn_purple},
-                \Title: #{guifg: g:unicorn_purple},
-                \
-                \markdownH1: #{guifg: g:unicorn_blue},
-                \markdownH2: #{guifg: g:unicorn_blue},
-                \markdownH3: #{guifg: g:unicorn_blue},
-                \markdownH4: #{guifg: g:unicorn_blue},
-                \markdownH5: #{guifg: g:unicorn_blue},
-                \markdownH6: #{guifg: g:unicorn_blue},
-                \markdownH1Delimiter: #{guifg: g:unicorn_blue},
-                \markdownH2Delimiter: #{guifg: g:unicorn_blue},
-                \markdownH3Delimiter: #{guifg: g:unicorn_blue},
-                \markdownH4Delimiter: #{guifg: g:unicorn_blue},
-                \markdownH5Delimiter: #{guifg: g:unicorn_blue},
-                \markdownH6Delimiter: #{guifg: g:unicorn_blue},
-                \markdownLinkText: #{guifg: g:unicorn_green},
-                \markdownUrl: #{guifg: g:unicorn_orange},
-                \markdownCodeDelimiter: #{guifg: g:unicorn_purple},
-                \markdownCode: #{guifg: g:unicorn_white_dark},
-                \
-                \mesonBuiltin: #{guifg: g:unicorn_blue},
-                \makeTarget: #{guifg: g:unicorn_green},
-                \
-                \texInputFile: #{guifg: g:unicorn_green},
-                \
-                \TelescopeBorder: #{guifg: g:unicorn_blue},
-                \
-                \Directory: #{guifg: g:unicorn_blue},
-                \NvimTreeNormal: #{guifg: g:unicorn_white, guibg: g:unicorn_tree_bg},
-                \NvimTreeFolderName: #{guifg: g:unicorn_blue, guibg: g:unicorn_tree_bg},
-                \NvimTreeOpenedFolderName: #{guifg: g:unicorn_blue, guibg: g:unicorn_tree_bg},
-                \NvimTreeIndentMarker: #{guifg: g:unicorn_black_light, guibg: g:unicorn_tree_bg},
-                \NvimTreeFolderIcon: #{guifg: g:unicorn_blue, guibg: g:unicorn_tree_bg},
-                \NvimTreeRootFolder: #{guifg: g:unicorn_dark_grey, guibg: g:unicorn_tree_bg},
-                \NvimTreeSpecialFile: #{guifg: g:unicorn_green, guibg: g:unicorn_tree_bg},
-                \NvimTreeImageFile: #{guibg: g:unicorn_tree_bg},
-                \NvimTreeGitDirty: #{guifg: g:unicorn_orange, guibg: g:unicorn_tree_bg},
-                \NvimTreeGitNew: #{guifg: g:unicorn_yellow, guibg: g:unicorn_tree_bg},
-                \NvimTreeGitStaged: #{guifg: g:unicorn_green, guibg: g:unicorn_tree_bg},
-                \NvimTreeGitDeleted: #{guifg: g:unicorn_red, guibg: g:unicorn_tree_bg},
-                \
-                \LspDiagnosticsError: #{guifg: g:unicorn_red},
-                \LspDiagnosticsWarning: #{guifg: g:unicorn_yellow},
-                \LspDiagnosticsInformation: #{guifg: g:unicorn_blue},
-                \LspDiagnosticsHint: #{guifg: g:unicorn_purple},
-                \LspDiagnosticsDefaultError: #{guifg: g:unicorn_red},
-                \LspDiagnosticsDefaultWarning: #{guifg: g:unicorn_yellow},
-                \LspDiagnosticsDefaultInformation: #{guifg: g:unicorn_blue},
-                \LspDiagnosticsDefaultHint: #{guifg: g:unicorn_purple},
-                \LspDiagnosticsUnderlineError: #{guisp: g:unicorn_red, gui: "underline"},
-                \LspDiagnosticsUnderlineWarning: #{guisp: g:unicorn_yellow, gui: "underline"},
-                \LspDiagnosticsUnderlineInformation: #{guisp: g:unicorn_blue, gui: "underline"},
-                \LspDiagnosticsUnderlineHint: #{guisp: g:unicorn_purple, gui: "underline"},
-                \DiagnosticUnderlineError: #{guisp: g:unicorn_red, gui: "underline"},
-                \DiagnosticUnderlineWarn: #{guisp: g:unicorn_yellow, gui: "underline"},
-                \DiagnosticUnderlineInfo: #{guisp: g:unicorn_blue, gui: "underline"},
-                \DiagnosticUnderlineHint: #{guisp: g:unicorn_purple, gui: "underline"},
-                \DiagnosticError: #{guifg: g:unicorn_red},
-                \DiagnosticUnderline: #{guisp: g:unicorn_red, gui: "underline"},
-                \
-                \DiffAdd: #{guifg: g:unicorn_green, guibg: g:unicorn_black},
-                \DiffChange: #{guifg: g:unicorn_blue, guibg: g:unicorn_black},
-                \DiffDelete: #{guifg: g:unicorn_red, guibg: g:unicorn_black},
-                \
-                \Underlined: #{guifg: g:unicorn_blue, gui: "underline"},
-                \tutorLink: #{guifg: g:unicorn_blue, gui: "underline"},
-                \tutorOK: #{guifg: g:unicorn_green, gui: "bold"},
-                \tutorX: #{guifg: g:unicorn_red, gui: "bold"},
-                \
-                \dartIdentifier: #{guifg: g:unicorn_blue},
-                \}
-" }}}
-
-" Setup highlights, designed that light scheme could be added easily
-function! UnicornSetup()
-    let l:colors = s:dark_colors
-    let l:bg = s:dark_bg
-    let l:fg = s:dark_fg
-
-    let l:cmd = ""
-
-    for [hl_group, hl_args] in items(l:colors)
-        let l:cmd = "hi " .. hl_group
-        
-        " Defaults if not exist
-        if !has_key(hl_args, "guibg") | let hl_args["guibg"] = l:bg | endif
-        if !has_key(hl_args, "guifg") | let hl_args["guifg"] = l:fg | endif
-        if !has_key(hl_args, "gui") | let hl_args["gui"] = s:none | endif
-
-        for [key, val] in items(hl_args)
-            let l:cmd = l:cmd .. " " .. key .. "=" .. val
-        endfor
-        "echom l:cmd
-        exe l:cmd
-        let l:cmd = ""
-    endfor
-endfunction
-
-call UnicornSetup()
+hi Normal guibg=#191919 guifg=#ebdbb2 gui=none
+hi SpecialKey guibg=#191919 guifg=#f6d32d gui=none
+hi LineNr guibg=#191919 guifg=#665b50 gui=none
+hi EndOfBuffer guibg=none guifg=#719386 gui=none
+hi CursorLine guibg=none guifg=none gui=none
+hi CursorLineNr guibg=#262626 guifg=#719386 gui=none
+hi ColorColumn guibg=#262626 guifg=#ebdbb2 gui=none
+hi Todo guibg=#262626 guifg=#fe8019 gui=bold
+hi NonText guibg=#191919 guifg=#b8bb26 gui=none
+hi Visual guibg=#719386 guifg=#191919 gui=none
+hi SpellBad guibg=#191919 guifg=none gui=undercurl guisp=#fe8019
+hi SpellCap guibg=#191919 guifg=none gui=undercurl guisp=#719386
+hi SpellRare guibg=#191919 guifg=none gui=undercurl guisp=#d3869b
+hi SpellLocal guibg=#191919 guifg=none gui=undercurl guisp=#f6d32d
+hi StatusLine guibg=#262626 guifg=#ebdbb2 gui=none
+hi StatusLineNC guibg=#262626 guifg=#91876d gui=none
+hi ModeMsg guibg=#191919 guifg=#d3869b gui=none
+hi MoreMsg guibg=#191919 guifg=#719386 gui=none
+hi VertSplit guibg=#191919 guifg=#665b50 gui=none
+hi MatchParen guibg=#262626 guifg=#fe8019 gui=bold
+hi NvimInternalError guibg=#D6461A guifg=#191919 gui=none
+hi Error guibg=#D6461A guifg=#ebdbb2 gui=none
+hi ErrorMsg guibg=#D6461A guifg=#ebdbb2 gui=none
+hi RedrawDebugRecompose guibg=#D6461A guifg=#ebdbb2 gui=none
+hi RedrawDebugComposed guibg=#b8bb26 guifg=#191919 gui=none
+hi RedrawDebugClear guibg=#f6d32d guifg=#191919 gui=none
+hi DiffText guibg=#D6461A guifg=#ebdbb2 gui=none
+hi WarningMsg guibg=#191919 guifg=#D6461A gui=none
+hi Search guibg=#f6d32d guifg=#191919 gui=none
+hi Folded guibg=#262626 guifg=#91876d gui=none
+hi Question guibg=#191919 guifg=#719386 gui=none
+hi NormalFloat guibg=#262626 guifg=#719386 gui=none
+hi Pmenu guibg=#262626 guifg=#719386 gui=none
+hi PmenuSel guibg=#91876d guifg=#191919 gui=none
+hi SignColumn guibg=#191919 guifg=#ebdbb2 gui=none
+hi Comment guibg=#191919 guifg=#928374 gui=none
+hi Constant guibg=#191919 guifg=#d3869b gui=none
+hi String guibg=#191919 guifg=#b8bb26 gui=none
+hi Character guibg=#191919 guifg=#719386 gui=none
+hi Number guibg=#191919 guifg=#fe8019 gui=none
+hi Boolean guibg=#191919 guifg=#d3869b gui=none
+hi Float guibg=#191919 guifg=#D6461A gui=none
+hi Identifier guibg=#191919 guifg=#ebdbb2 gui=none
+hi Statement guibg=#191919 guifg=#719386 gui=none
+hi PreProc guibg=#191919 guifg=#719386 gui=none
+hi Type guibg=#191919 guifg=#719386 gui=none
+hi Special guibg=#191919 guifg=#d3869b gui=none
+hi Title guibg=#191919 guifg=#d3869b gui=none
+hi markdownH1 guibg=#191919 guifg=#719386 gui=none
+hi markdownH2 guibg=#191919 guifg=#719386 gui=none
+hi markdownH3 guibg=#191919 guifg=#719386 gui=none
+hi markdownH4 guibg=#191919 guifg=#719386 gui=none
+hi markdownH5 guibg=#191919 guifg=#719386 gui=none
+hi markdownH6 guibg=#191919 guifg=#719386 gui=none
+hi markdownH1Delimiter guibg=#191919 guifg=#719386 gui=none
+hi markdownH2Delimiter guibg=#191919 guifg=#719386 gui=none
+hi markdownH3Delimiter guibg=#191919 guifg=#719386 gui=none
+hi markdownH4Delimiter guibg=#191919 guifg=#719386 gui=none
+hi markdownH5Delimiter guibg=#191919 guifg=#719386 gui=none
+hi markdownH6Delimiter guibg=#191919 guifg=#719386 gui=none
+hi markdownLinkText guibg=#191919 guifg=#b8bb26 gui=none
+hi markdownUrl guibg=#191919 guifg=#fe8019 gui=none
+hi markdownCodeDelimiter guibg=#191919 guifg=#d3869b gui=none
+hi markdownCode guibg=#191919 guifg=#91876d gui=none
+hi mesonBuiltin guibg=#191919 guifg=#719386 gui=none
+hi makeTarget guibg=#191919 guifg=#b8bb26 gui=none
+hi texInputFile guibg=#191919 guifg=#b8bb26 gui=none
+hi TelescopeBorder guibg=#191919 guifg=#719386 gui=none
+hi Directory guibg=#191919 guifg=#719386 gui=none
+hi NvimTreeNormal guibg=#131313 guifg=#ebdbb2 gui=none
+hi NvimTreeFolderName guibg=#131313 guifg=#719386 gui=none
+hi NvimTreeOpenedFolderName guibg=#131313 guifg=#719386 gui=none
+hi NvimTreeIndentMarker guibg=#131313 guifg=#262626 gui=none
+hi NvimTreeFolderIcon guibg=#131313 guifg=#719386 gui=none
+hi NvimTreeRootFolder guibg=#131313 guifg=#665b50 gui=none
+hi NvimTreeSpecialFile guibg=#131313 guifg=#b8bb26 gui=none
+hi NvimTreeImageFile guibg=#131313 guifg=#ebdbb2 gui=none
+hi NvimTreeGitDirty guibg=#131313 guifg=#fe8019 gui=none
+hi NvimTreeGitNew guibg=#131313 guifg=#f6d32d gui=none
+hi NvimTreeGitStaged guibg=#131313 guifg=#b8bb26 gui=none
+hi NvimTreeGitDeleted guibg=#131313 guifg=#D6461A gui=none
+hi LspDiagnosticsError guibg=#191919 guifg=#D6461A gui=none
+hi LspDiagnosticsWarning guibg=#191919 guifg=#f6d32d gui=none
+hi LspDiagnosticsInformation guibg=#191919 guifg=#719386 gui=none
+hi LspDiagnosticsHint guibg=#191919 guifg=#d3869b gui=none
+hi LspDiagnosticsDefaultError guibg=#191919 guifg=#D6461A gui=none
+hi LspDiagnosticsDefaultWarning guibg=#191919 guifg=#f6d32d gui=none
+hi LspDiagnosticsDefaultInformation guibg=#191919 guifg=#719386 gui=none
+hi LspDiagnosticsDefaultHint guibg=#191919 guifg=#d3869b gui=none
+hi LspDiagnosticsUnderlineError guibg=#191919 guifg=#ebdbb2 gui=underline guisp=#D6461A
+hi LspDiagnosticsUnderlineWarning guibg=#191919 guifg=#ebdbb2 gui=underline guisp=#f6d32d
+hi LspDiagnosticsUnderlineInformation guibg=#191919 guifg=#ebdbb2 gui=underline guisp=#719386
+hi LspDiagnosticsUnderlineHint guibg=#191919 guifg=#ebdbb2 gui=underline guisp=#d3869b
+hi DiagnosticUnderlineError guibg=#191919 guifg=#ebdbb2 gui=underline guisp=#D6461A
+hi DiagnosticUnderlineWarn guibg=#191919 guifg=#ebdbb2 gui=underline guisp=#f6d32d
+hi DiagnosticUnderlineInfo guibg=#191919 guifg=#ebdbb2 gui=underline guisp=#719386
+hi DiagnosticUnderlineHint guibg=#191919 guifg=#ebdbb2 gui=underline guisp=#d3869b
+hi DiagnosticError guibg=#191919 guifg=#D6461A gui=none
+hi DiagnosticUnderline guibg=#191919 guifg=#ebdbb2 gui=underline guisp=#D6461A
+hi DiffAdd guibg=#191919 guifg=#b8bb26 gui=none
+hi DiffChange guibg=#191919 guifg=#719386 gui=none
+hi DiffDelete guibg=#191919 guifg=#D6461A gui=none
+hi Underlined guibg=#191919 guifg=#719386 gui=underline
+hi tutorLink guibg=#191919 guifg=#719386 gui=underline
+hi tutorOK guibg=#191919 guifg=#b8bb26 gui=bold
+hi tutorX guibg=#191919 guifg=#D6461A gui=bold
+hi dartIdentifier guibg=#191919 guifg=#719386 gui=none
