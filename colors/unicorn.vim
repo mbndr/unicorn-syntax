@@ -121,3 +121,17 @@ hi tutorLink guibg=#191919 guifg=#719386 gui=underline
 hi tutorOK guibg=#191919 guifg=#b8bb26 gui=bold
 hi tutorX guibg=#191919 guifg=#D6461A gui=bold
 hi dartIdentifier guibg=#191919 guifg=#719386 gui=none
+
+let g:unicorn_white = "#ebdbb2"
+let g:unicorn_black = "#191919"
+let g:unicorn_green = "#b8bb26"
+let g:unicorn_blue = "#719386"
+let g:unicorn_grey = "#928374"
+let g:unicorn_red = "#D6461A"
+let g:unicorn_purple = "#d3869b"
+let g:unicorn_orange = "#fe8019"
+let g:unicorn_yellow = "#f6d32d"
+let g:unicorn_black_light = "#262626"
+let g:unicorn_dark_grey = "#665b50"
+let g:unicorn_white_dark = "#91876d"
+let g:unicorn_tree_bg = "#131313"

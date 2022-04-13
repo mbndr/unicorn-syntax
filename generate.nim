@@ -192,6 +192,22 @@ let g:colors_name = "unicorn"
     if hl.sp.isSome():
       f.write(" guisp=" & hl.sp.get())
     f.writeLine("")
+  f.writeLine("")
+
+  # Define variables for external use (THIS IS BAD BUT SO IS NIM)
+  f.writeLine("let g:unicorn_white = \"" & unicorn_white & "\"")
+  f.writeLine("let g:unicorn_black = \"" & unicorn_black & "\"")
+  f.writeLine("let g:unicorn_green = \"" & unicorn_green & "\"")
+  f.writeLine("let g:unicorn_blue = \"" & unicorn_blue & "\"")
+  f.writeLine("let g:unicorn_grey = \"" & unicorn_grey & "\"")
+  f.writeLine("let g:unicorn_red = \"" & unicorn_red & "\"")
+  f.writeLine("let g:unicorn_purple = \"" & unicorn_purple & "\"")
+  f.writeLine("let g:unicorn_orange = \"" & unicorn_orange & "\"")
+  f.writeLine("let g:unicorn_yellow = \"" & unicorn_yellow & "\"")
+  f.writeLine("let g:unicorn_black_light = \"" & unicorn_black_light & "\"")
+  f.writeLine("let g:unicorn_dark_grey = \"" & unicorn_dark_grey & "\"")
+  f.writeLine("let g:unicorn_white_dark = \"" & unicorn_white_dark & "\"")
+  f.writeLine("let g:unicorn_tree_bg = \"" & unicorn_tree_bg & "\"")
 
 # Program start
 
