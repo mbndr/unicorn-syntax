@@ -1,2 +1,2 @@
 all:
-	nim r --verbosity:0 generate.nim colors/unicorn.vim
+	go run generate.go colors/unicorn.vim
