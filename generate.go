@@ -56,38 +56,38 @@ func GetHighlights(colors map[string]string) map[string]Highlight {
     return map[string]Highlight{
         "Normal": {},
         "SpecialKey": {fg: c("yellow")},
-        "LineNr": {fg: c("dark_grey")},
+        "LineNr": {fg: c("grey_2")},
         "EndOfBuffer": {fg: c("blue"), bg: none},
         "CursorLine": {fg: none, bg: none},
-        "CursorLineNr": {bg: c("black_light"), fg: c("blue")},
-        "ColorColumn": {bg: c("black_light")},
-        "Todo": {bg: c("black_light"), fg: c("orange"), gui: bold},
+        "CursorLineNr": {bg: c("bg_2"), fg: c("blue")},
+        "ColorColumn": {bg: c("bg_2")},
+        "Todo": {bg: c("bg_2"), fg: c("orange"), gui: bold},
         "NonText": {fg: c("green")},
-        "Visual": {bg: c("blue"), fg: c("black")},
+        "Visual": {bg: c("blue"), fg: c("bg")},
         "SpellBad": {gui: undercurl, sp: c("orange"), fg: none},
         "SpellCap": {gui: undercurl, sp: c("blue"), fg: none},
         "SpellRare": {gui: undercurl, sp: c("purple"), fg: none},
         "SpellLocal": {gui: undercurl, sp: c("yellow"), fg: none},
-        "StatusLine": {bg: c("black_light"), fg: c("white")},
-        "StatusLineNC": {bg: c("black_light"), fg: c("white_dark")},
+        "StatusLine": {bg: c("bg_2"), fg: c("fg")},
+        "StatusLineNC": {bg: c("bg_2"), fg: c("fg_2")},
         "ModeMsg": {fg: c("purple")},
         "MoreMsg": {fg: c("blue")},
-        "VertSplit": {fg: c("dark_grey")},
-        "MatchParen": {gui: bold, bg: c("black_light"), fg: c("orange")},
-        "NvimInternalError": {bg: c("red"), fg: c("black")},
-        "Error": {bg: c("red"), fg: c("white")},
-        "ErrorMsg": {bg: c("red"), fg: c("white")},
-        "RedrawDebugRecompose": {bg: c("red"), fg: c("white")},
-        "RedrawDebugComposed": {bg: c("green"), fg: c("black")},
-        "RedrawDebugClear": {bg: c("yellow"), fg: c("black")},
-        "DiffText": {bg: c("red"), fg: c("white")},
+        "VertSplit": {fg: c("grey_2")},
+        "MatchParen": {gui: bold, bg: c("bg_2"), fg: c("orange")},
+        "NvimInternalError": {bg: c("red"), fg: c("bg")},
+        "Error": {bg: c("red"), fg: c("fg")},
+        "ErrorMsg": {bg: c("red"), fg: c("fg")},
+        "RedrawDebugRecompose": {bg: c("red"), fg: c("fg")},
+        "RedrawDebugComposed": {bg: c("green"), fg: c("bg")},
+        "RedrawDebugClear": {bg: c("yellow"), fg: c("bg")},
+        "DiffText": {bg: c("red"), fg: c("fg")},
         "WarningMsg": {fg: c("red")},
-        "Search": {bg: c("yellow"), fg: c("black")},
-        "Folded": {bg: c("black_light"), fg: c("white_dark")},
+        "Search": {bg: c("yellow"), fg: c("bg")},
+        "Folded": {bg: c("bg_2"), fg: c("fg_2")},
         "Question": {fg: c("blue")},
-        "NormalFloat": {bg: c("black_light"), fg: c("blue")},
-        "Pmenu": {bg: c("black_light"), fg: c("blue")},
-        "PmenuSel": {bg: c("white_dark"), fg: c("black")},
+        "NormalFloat": {bg: c("bg_2"), fg: c("blue")},
+        "Pmenu": {bg: c("bg_2"), fg: c("blue")},
+        "PmenuSel": {bg: c("fg_2"), fg: c("bg")},
         "SignColumn": {},
         "Comment": {fg: c("grey")},
         "Constant": {fg: c("purple")},
@@ -117,18 +117,18 @@ func GetHighlights(colors map[string]string) map[string]Highlight {
         "markdownLinkText": {fg: c("green")},
         "markdownUrl": {fg: c("orange")},
         "markdownCodeDelimiter": {fg: c("purple")},
-        "markdownCode": {fg: c("white_dark")},
+        "markdownCode": {fg: c("fg_2")},
         "mesonBuiltin": {fg: c("blue")},
         "makeTarget": {fg: c("green")},
         "texInputFile": {fg: c("green")},
         "TelescopeBorder": {fg: c("blue")},
         "Directory": {fg: c("blue")},
-        "NvimTreeNormal": {fg: c("white"), bg: c("tree_bg")},
+        "NvimTreeNormal": {fg: c("fg"), bg: c("tree_bg")},
         "NvimTreeFolderName": {fg: c("blue"), bg: c("tree_bg")},
         "NvimTreeOpenedFolderName": {fg: c("blue"), bg: c("tree_bg")},
-        "NvimTreeIndentMarker": {fg: c("black_light"), bg: c("tree_bg")},
+        "NvimTreeIndentMarker": {fg: c("bg_2"), bg: c("tree_bg")},
         "NvimTreeFolderIcon": {fg: c("blue"), bg: c("tree_bg")},
-        "NvimTreeRootFolder": {fg: c("dark_grey"), bg: c("tree_bg")},
+        "NvimTreeRootFolder": {fg: c("grey_2"), bg: c("tree_bg")},
         "NvimTreeSpecialFile": {fg: c("green"), bg: c("tree_bg")},
         "NvimTreeImageFile": {bg: c("tree_bg")},
         "NvimTreeGitDirty": {fg: c("orange"), bg: c("tree_bg")},
@@ -153,9 +153,9 @@ func GetHighlights(colors map[string]string) map[string]Highlight {
         "DiagnosticUnderlineHint": {sp: c("purple"), gui: underline},
         "DiagnosticError": {fg: c("red")},
         "DiagnosticUnderline": {sp: c("red"), gui: underline},
-        "DiffAdd": {fg: c("green"), bg: c("black")},
-        "DiffChange": {fg: c("blue"), bg: c("black")},
-        "DiffDelete": {fg: c("red"), bg: c("black")},
+        "DiffAdd": {fg: c("green"), bg: c("bg")},
+        "DiffChange": {fg: c("blue"), bg: c("bg")},
+        "DiffDelete": {fg: c("red"), bg: c("bg")},
         "Underlined": {fg: c("blue"), gui: underline},
         "tutorLink": {fg: c("blue"), gui: underline},
         "tutorOK": {fg: c("green"), gui: bold},
@@ -200,8 +200,9 @@ func WriteHighlights(f *os.File, highlights map[string]Highlight, colors map[str
 }
 
 var dark_colors = map[string]string{
-    "white": "#ebdbb2",
-    "black": "#191919",
+    "fg": "#ebdbb2",
+    "bg": "#191919",
+
     "green": "#b8bb26",
     "blue": "#719386",
     "grey": "#928374",
@@ -209,10 +210,29 @@ var dark_colors = map[string]string{
     "purple": "#d3869b",
     "orange": "#fe8019",
     "yellow": "#f6d32d",
-    "black_light": "#262626",
-    "dark_grey": "#665b50",
-    "white_dark": "#91876d",
+
+    "bg_2": "#262626", // altered bg, e.g. for colorcolumn
+    "grey_2": "#665b50", // altered grey e.g. linenr
+    "fg_2": "#91876d", // altered fg
     "tree_bg": "#131313",
+}
+
+var light_colors = map[string]string{
+    "fg": "#3f3f3f",
+    "bg": "#ebdbb2",
+
+    "green": "#909314",
+    "blue": "#3b6a58",
+    "grey": "#928374",
+    "red": "#D6461A",
+    "purple": "#9d6877",
+    "orange": "#d26106",
+    "yellow": "#c5b256",
+    
+    "bg_2": "#dbcca6",
+    "grey_2": "#988d6f",
+    "fg_2": "#91876d",
+    "tree_bg": "#dbcca7",
 }
 
 func main() {
@@ -245,8 +265,9 @@ let g:colors_name = "unicorn"
 `)
 
     // Write highlights
-    f.WriteString("if &background == \"dark\"\n")
-    WriteHighlights(f, GetHighlights(dark_colors), dark_colors, dark_colors["black"], dark_colors["white"])
+    f.WriteString("if &background == \"light\"\n")
+    WriteHighlights(f, GetHighlights(light_colors), light_colors, light_colors["bg"], light_colors["fg"])
     f.WriteString("\nelse\n")
+    WriteHighlights(f, GetHighlights(dark_colors), dark_colors, dark_colors["bg"], dark_colors["fg"])
     f.WriteString("\nendif\n")
 }
