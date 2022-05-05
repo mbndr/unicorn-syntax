@@ -8,5 +8,17 @@ This is currently only for personal use and better highlighting for a language i
 
 When editing and regenerating use `generate.nim` and run `make` with `nim` language installed.
 
-![Preview C](preview/c.png)
+![Preview Dark](preview/dark.png)
+![Preview Light](preview/light.png)
 
+## Usage
+```vim
+" Include with plugin manager (e.g. vim-plug)
+Plug "mbndr/unicorn-syntax"
+
+" ...
+
+" Light theme also available
+set background=dark
+colorscheme unicorn
+```
