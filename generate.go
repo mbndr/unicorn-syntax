@@ -1,32 +1,20 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"os"
-    "fmt"
+	"sort"
 )
 
 const (
-    white = "#ebdbb2"
-    black = "#191919"
-    green = "#b8bb26"
-    blue = "#719386"
-    grey = "#928374"
-    red = "#D6461A"
-    purple = "#d3869b"
-    orange = "#fe8019"
-    yellow = "#f6d32d"
-    black_light = "#262626"
-    dark_grey = "#665b50"
-    white_dark = "#91876d"
-    tree_bg = "#131313"
-
     undercurl = "undercurl"
     underline = "underline"
     none = "none"
     bold = "bold"
 )
 
+// Highlight is a single highlight
 type Highlight struct {
     fg string
     bg string
@@ -59,133 +47,172 @@ func (hl Highlight) HasSp() bool {
     return len(hl.sp) > 0
 }
 
-// How they are accessible externally (with "g:unicorn_" prefix)
-var color_strings = map[string]string{
-    "white": white,
-    "black": black,
-    "green": green,
-    "blue": blue,
-    "grey": grey,
-    "red": red,
-    "purple": purple,
-    "orange": orange,
-    "yellow": yellow,
-    "black_light": black_light,
-    "dark_grey": dark_grey,
-    "white_dark": white_dark,
-    "tree_bg": tree_bg,
+// Highlight for both color schemes
+func GetHighlights(colors map[string]string) map[string]Highlight {
+    c := func(n string) string {
+        return colors[n]
+    }
+
+    return map[string]Highlight{
+        "Normal": {},
+        "SpecialKey": {fg: c("yellow")},
+        "LineNr": {fg: c("dark_grey")},
+        "EndOfBuffer": {fg: c("blue"), bg: c("none")},
+        "CursorLine": {fg: c("none"), bg: c("none")},
+        "CursorLineNr": {bg: c("black_light"), fg: c("blue")},
+        "ColorColumn": {bg: c("black_light")},
+        "Todo": {bg: c("black_light"), fg: c("orange"), gui: bold},
+        "NonText": {fg: c("green")},
+        "Visual": {bg: c("blue"), fg: c("black")},
+        "SpellBad": {gui: undercurl, sp: c("orange"), fg: c("none")},
+        "SpellCap": {gui: undercurl, sp: c("blue"), fg: c("none")},
+        "SpellRare": {gui: undercurl, sp: c("purple"), fg: c("none")},
+        "SpellLocal": {gui: undercurl, sp: c("yellow"), fg: c("none")},
+        "StatusLine": {bg: c("black_light"), fg: c("white")},
+        "StatusLineNC": {bg: c("black_light"), fg: c("white_dark")},
+        "ModeMsg": {fg: c("purple")},
+        "MoreMsg": {fg: c("blue")},
+        "VertSplit": {fg: c("dark_grey")},
+        "MatchParen": {gui: bold, bg: c("black_light"), fg: c("orange")},
+        "NvimInternalError": {bg: c("red"), fg: c("black")},
+        "Error": {bg: c("red"), fg: c("white")},
+        "ErrorMsg": {bg: c("red"), fg: c("white")},
+        "RedrawDebugRecompose": {bg: c("red"), fg: c("white")},
+        "RedrawDebugComposed": {bg: c("green"), fg: c("black")},
+        "RedrawDebugClear": {bg: c("yellow"), fg: c("black")},
+        "DiffText": {bg: c("red"), fg: c("white")},
+        "WarningMsg": {fg: c("red")},
+        "Search": {bg: c("yellow"), fg: c("black")},
+        "Folded": {bg: c("black_light"), fg: c("white_dark")},
+        "Question": {fg: c("blue")},
+        "NormalFloat": {bg: c("black_light"), fg: c("blue")},
+        "Pmenu": {bg: c("black_light"), fg: c("blue")},
+        "PmenuSel": {bg: c("white_dark"), fg: c("black")},
+        "SignColumn": {},
+        "Comment": {fg: c("grey")},
+        "Constant": {fg: c("purple")},
+        "String": {fg: c("green")},
+        "Character": {fg: c("blue")},
+        "Number": {fg: c("orange")},
+        "Boolean": {fg: c("purple")},
+        "Float": {fg: c("red")},
+        "Identifier": {},
+        "Statement": {fg: c("blue")},
+        "PreProc": {fg: c("blue")},
+        "Type": {fg: c("blue")},
+        "Special": {fg: c("purple")},
+        "Title": {fg: c("purple")},
+        "markdownH1": {fg: c("blue")},
+        "markdownH2": {fg: c("blue")},
+        "markdownH3": {fg: c("blue")},
+        "markdownH4": {fg: c("blue")},
+        "markdownH5": {fg: c("blue")},
+        "markdownH6": {fg: c("blue")},
+        "markdownH1Delimiter": {fg: c("blue")},
+        "markdownH2Delimiter": {fg: c("blue")},
+        "markdownH3Delimiter": {fg: c("blue")},
+        "markdownH4Delimiter": {fg: c("blue")},
+        "markdownH5Delimiter": {fg: c("blue")},
+        "markdownH6Delimiter": {fg: c("blue")},
+        "markdownLinkText": {fg: c("green")},
+        "markdownUrl": {fg: c("orange")},
+        "markdownCodeDelimiter": {fg: c("purple")},
+        "markdownCode": {fg: c("white_dark")},
+        "mesonBuiltin": {fg: c("blue")},
+        "makeTarget": {fg: c("green")},
+        "texInputFile": {fg: c("green")},
+        "TelescopeBorder": {fg: c("blue")},
+        "Directory": {fg: c("blue")},
+        "NvimTreeNormal": {fg: c("white"), bg: c("tree_bg")},
+        "NvimTreeFolderName": {fg: c("blue"), bg: c("tree_bg")},
+        "NvimTreeOpenedFolderName": {fg: c("blue"), bg: c("tree_bg")},
+        "NvimTreeIndentMarker": {fg: c("black_light"), bg: c("tree_bg")},
+        "NvimTreeFolderIcon": {fg: c("blue"), bg: c("tree_bg")},
+        "NvimTreeRootFolder": {fg: c("dark_grey"), bg: c("tree_bg")},
+        "NvimTreeSpecialFile": {fg: c("green"), bg: c("tree_bg")},
+        "NvimTreeImageFile": {bg: c("tree_bg")},
+        "NvimTreeGitDirty": {fg: c("orange"), bg: c("tree_bg")},
+        "NvimTreeGitNew": {fg: c("yellow"), bg: c("tree_bg")},
+        "NvimTreeGitStaged": {fg: c("green"), bg: c("tree_bg")},
+        "NvimTreeGitDeleted": {fg: c("red"), bg: c("tree_bg")},
+        "LspDiagnosticsError": {fg: c("red")},
+        "LspDiagnosticsWarning": {fg: c("yellow")},
+        "LspDiagnosticsInformation": {fg: c("blue")},
+        "LspDiagnosticsHint": {fg: c("purple")},
+        "LspDiagnosticsDefaultError": {fg: c("red")},
+        "LspDiagnosticsDefaultWarning": {fg: c("yellow")},
+        "LspDiagnosticsDefaultInformation": {fg: c("blue")},
+        "LspDiagnosticsDefaultHint": {fg: c("purple")},
+        "LspDiagnosticsUnderlineError": {sp: c("red"), gui: underline},
+        "LspDiagnosticsUnderlineWarning": {sp: c("yellow"), gui: underline},
+        "LspDiagnosticsUnderlineInformation": {sp: c("blue"), gui: underline},
+        "LspDiagnosticsUnderlineHint": {sp: c("purple"), gui: underline},
+        "DiagnosticUnderlineError": {sp: c("red"), gui: underline},
+        "DiagnosticUnderlineWarn": {sp: c("yellow"), gui: underline},
+        "DiagnosticUnderlineInfo": {sp: c("blue"), gui: underline},
+        "DiagnosticUnderlineHint": {sp: c("purple"), gui: underline},
+        "DiagnosticError": {fg: c("red")},
+        "DiagnosticUnderline": {sp: c("red"), gui: underline},
+        "DiffAdd": {fg: c("green"), bg: c("black")},
+        "DiffChange": {fg: c("blue"), bg: c("black")},
+        "DiffDelete": {fg: c("red"), bg: c("black")},
+        "Underlined": {fg: c("blue"), gui: underline},
+        "tutorLink": {fg: c("blue"), gui: underline},
+        "tutorOK": {fg: c("green"), gui: bold},
+        "tutorX": {fg: c("red"), gui: bold},
+        "dartIdentifier": {fg: c("blue")},
+    }
 }
 
-var dark_bg = black
-var dark_fg = white
-var dark_colors = map[string]Highlight{
-    "Normal": {},
-    "SpecialKey": {fg: yellow},
-    "LineNr": {fg: dark_grey},
-    "EndOfBuffer": {fg: blue, bg: none},
-    "CursorLine": {fg: none, bg: none},
-    "CursorLineNr": {bg: black_light, fg: blue},
-    "ColorColumn": {bg: black_light},
-    "Todo": {bg: black_light, fg: orange, gui: bold},
-    "NonText": {fg: green},
-    "Visual": {bg: blue, fg: black},
-    "SpellBad": {gui: undercurl, sp: orange, fg: none},
-    "SpellCap": {gui: undercurl, sp: blue, fg: none},
-    "SpellRare": {gui: undercurl, sp: purple, fg: none},
-    "SpellLocal": {gui: undercurl, sp: yellow, fg: none},
-    "StatusLine": {bg: black_light, fg: white},
-    "StatusLineNC": {bg: black_light, fg: white_dark},
-    "ModeMsg": {fg: purple},
-    "MoreMsg": {fg: blue},
-    "VertSplit": {fg: dark_grey},
-    "MatchParen": {gui: bold, bg: black_light, fg: orange},
-    "NvimInternalError": {bg: red, fg: black},
-    "Error": {bg: red, fg: white},
-    "ErrorMsg": {bg: red, fg: white},
-    "RedrawDebugRecompose": {bg: red, fg: white},
-    "RedrawDebugComposed": {bg: green, fg: black},
-    "RedrawDebugClear": {bg: yellow, fg: black},
-    "DiffText": {bg: red, fg: white},
-    "WarningMsg": {fg: red},
-    "Search": {bg: yellow, fg: black},
-    "Folded": {bg: black_light, fg: white_dark},
-    "Question": {fg: blue},
-    "NormalFloat": {bg: black_light, fg: blue},
-    "Pmenu": {bg: black_light, fg: blue},
-    "PmenuSel": {bg: white_dark, fg: black},
-    "SignColumn": {},
-    "Comment": {fg: grey},
-    "Constant": {fg: purple},
-    "String": {fg: green},
-    "Character": {fg: blue},
-    "Number": {fg: orange},
-    "Boolean": {fg: purple},
-    "Float": {fg: red},
-    "Identifier": {},
-    "Statement": {fg: blue},
-    "PreProc": {fg: blue},
-    "Type": {fg: blue},
-    "Special": {fg: purple},
-    "Title": {fg: purple},
-    "markdownH1": {fg: blue},
-    "markdownH2": {fg: blue},
-    "markdownH3": {fg: blue},
-    "markdownH4": {fg: blue},
-    "markdownH5": {fg: blue},
-    "markdownH6": {fg: blue},
-    "markdownH1Delimiter": {fg: blue},
-    "markdownH2Delimiter": {fg: blue},
-    "markdownH3Delimiter": {fg: blue},
-    "markdownH4Delimiter": {fg: blue},
-    "markdownH5Delimiter": {fg: blue},
-    "markdownH6Delimiter": {fg: blue},
-    "markdownLinkText": {fg: green},
-    "markdownUrl": {fg: orange},
-    "markdownCodeDelimiter": {fg: purple},
-    "markdownCode": {fg: white_dark},
-    "mesonBuiltin": {fg: blue},
-    "makeTarget": {fg: green},
-    "texInputFile": {fg: green},
-    "TelescopeBorder": {fg: blue},
-    "Directory": {fg: blue},
-    "NvimTreeNormal": {fg: white, bg: tree_bg},
-    "NvimTreeFolderName": {fg: blue, bg: tree_bg},
-    "NvimTreeOpenedFolderName": {fg: blue, bg: tree_bg},
-    "NvimTreeIndentMarker": {fg: black_light, bg: tree_bg},
-    "NvimTreeFolderIcon": {fg: blue, bg: tree_bg},
-    "NvimTreeRootFolder": {fg: dark_grey, bg: tree_bg},
-    "NvimTreeSpecialFile": {fg: green, bg: tree_bg},
-    "NvimTreeImageFile": {bg: tree_bg},
-    "NvimTreeGitDirty": {fg: orange, bg: tree_bg},
-    "NvimTreeGitNew": {fg: yellow, bg: tree_bg},
-    "NvimTreeGitStaged": {fg: green, bg: tree_bg},
-    "NvimTreeGitDeleted": {fg: red, bg: tree_bg},
-    "LspDiagnosticsError": {fg: red},
-    "LspDiagnosticsWarning": {fg: yellow},
-    "LspDiagnosticsInformation": {fg: blue},
-    "LspDiagnosticsHint": {fg: purple},
-    "LspDiagnosticsDefaultError": {fg: red},
-    "LspDiagnosticsDefaultWarning": {fg: yellow},
-    "LspDiagnosticsDefaultInformation": {fg: blue},
-    "LspDiagnosticsDefaultHint": {fg: purple},
-    "LspDiagnosticsUnderlineError": {sp: red, gui: underline},
-    "LspDiagnosticsUnderlineWarning": {sp: yellow, gui: underline},
-    "LspDiagnosticsUnderlineInformation": {sp: blue, gui: underline},
-    "LspDiagnosticsUnderlineHint": {sp: purple, gui: underline},
-    "DiagnosticUnderlineError": {sp: red, gui: underline},
-    "DiagnosticUnderlineWarn": {sp: yellow, gui: underline},
-    "DiagnosticUnderlineInfo": {sp: blue, gui: underline},
-    "DiagnosticUnderlineHint": {sp: purple, gui: underline},
-    "DiagnosticError": {fg: red},
-    "DiagnosticUnderline": {sp: red, gui: underline},
-    "DiffAdd": {fg: green, bg: black},
-    "DiffChange": {fg: blue, bg: black},
-    "DiffDelete": {fg: red, bg: black},
-    "Underlined": {fg: blue, gui: underline},
-    "tutorLink": {fg: blue, gui: underline},
-    "tutorOK": {fg: green, gui: bold},
-    "tutorX": {fg: red, gui: bold},
-    "dartIdentifier": {fg: blue},
+func WriteHighlights(f *os.File, highlights map[string]Highlight, colors map[string]string, defBg string, defFg string) {
+    // Sort highlights alphabetically
+    hlKeys := make([]string, 0, len(highlights))
+    for k := range highlights {
+        hlKeys = append(hlKeys, k)
+    }
+    sort.Strings(hlKeys)
+
+    // Write highlights
+    var hl Highlight
+    for _, key := range hlKeys {
+        hl = highlights[key]
+        f.WriteString(fmt.Sprintf("hi %s guibg=%s guifg=%s", key, hl.Bg(defBg), hl.Fg(defFg)))
+        f.WriteString(fmt.Sprintf(" gui=%s", hl.Gui(none)))
+        if hl.HasSp() {
+            f.WriteString(fmt.Sprintf(" guisp=%s", hl.sp))
+        }
+        f.WriteString("\n")
+    }
+    f.WriteString("\n")
+
+    // Sort colors alphabetically
+    cKeys := make([]string, 0, len(colors))
+    for k := range colors {
+        cKeys = append(cKeys, k)
+    }
+    sort.Strings(cKeys)
+
+    // Write color variables for external use
+    for _, key := range cKeys {
+        f.WriteString(fmt.Sprintf("let g:unicorn_%s = \"%s\"\n", key, colors[key]))
+    }
+
+}
+
+var dark_colors = map[string]string{
+    "white": "#ebdbb2",
+    "black": "#191919",
+    "green": "#b8bb26",
+    "blue": "#719386",
+    "grey": "#928374",
+    "red": "#D6461A",
+    "purple": "#d3869b",
+    "orange": "#fe8019",
+    "yellow": "#f6d32d",
+    "black_light": "#262626",
+    "dark_grey": "#665b50",
+    "white_dark": "#91876d",
+    "tree_bg": "#131313",
 }
 
 func main() {
@@ -220,18 +247,5 @@ let g:colors_name = "unicorn"
 `)
 
     // Write highlights
-    for key, hl := range dark_colors {
-        f.WriteString(fmt.Sprintf("hi %s guibg=%s guifg=%s", key, hl.Bg(dark_bg), hl.Fg(dark_fg)))
-        f.WriteString(fmt.Sprintf(" gui=%s", hl.Gui(none)))
-        if hl.HasSp() {
-            f.WriteString(fmt.Sprintf(" guisp=%s", hl.sp))
-        }
-        f.WriteString("\n")
-    }
-    f.WriteString("\n")
-
-    // Write color variables for external use
-    for name, color := range color_strings {
-        f.WriteString(fmt.Sprintf("let g:unicorn_%s = \"%s\"\n", name, color))
-    }
+    WriteHighlights(f, GetHighlights(dark_colors), dark_colors, dark_colors["black"], dark_colors["white"])
 }
