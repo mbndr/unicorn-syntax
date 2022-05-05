@@ -235,8 +235,6 @@ if !has("gui_running") && &t_Co < 256
     finish
 endif
 
-set background=dark
-
 hi clear
 if exists("syntax_on")
     syntax reset
@@ -247,5 +245,8 @@ let g:colors_name = "unicorn"
 `)
 
     // Write highlights
+    f.WriteString("if &background == \"dark\"\n")
     WriteHighlights(f, GetHighlights(dark_colors), dark_colors, dark_colors["black"], dark_colors["white"])
+    f.WriteString("\nelse\n")
+    f.WriteString("\nendif\n")
 }

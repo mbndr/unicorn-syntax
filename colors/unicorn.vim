@@ -5,8 +5,6 @@ if !has("gui_running") && &t_Co < 256
     finish
 endif
 
-set background=dark
-
 hi clear
 if exists("syntax_on")
     syntax reset
@@ -14,6 +12,7 @@ endif
 
 let g:colors_name = "unicorn"
 
+if &background == "dark"
 hi Boolean guibg=#191919 guifg=#d3869b gui=none
 hi Character guibg=#191919 guifg=#719386 gui=none
 hi ColorColumn guibg=#262626 guifg=#ebdbb2 gui=none
@@ -135,3 +134,7 @@ let g:unicorn_tree_bg = "#131313"
 let g:unicorn_white = "#ebdbb2"
 let g:unicorn_white_dark = "#91876d"
 let g:unicorn_yellow = "#f6d32d"
+
+else
+
+endif
