@@ -19,7 +19,7 @@ hi Character guibg=#191919 guifg=#719386 gui=none
 hi ColorColumn guibg=#262626 guifg=#ebdbb2 gui=none
 hi Comment guibg=#191919 guifg=#928374 gui=none
 hi Constant guibg=#191919 guifg=#d3869b gui=none
-hi CursorLine guibg=#191919 guifg=#ebdbb2 gui=none
+hi CursorLine guibg=none guifg=none gui=none
 hi CursorLineNr guibg=#262626 guifg=#719386 gui=none
 hi DiagnosticError guibg=#191919 guifg=#D6461A gui=none
 hi DiagnosticUnderline guibg=#191919 guifg=#ebdbb2 gui=underline guisp=#D6461A
@@ -32,7 +32,7 @@ hi DiffChange guibg=#191919 guifg=#719386 gui=none
 hi DiffDelete guibg=#191919 guifg=#D6461A gui=none
 hi DiffText guibg=#D6461A guifg=#ebdbb2 gui=none
 hi Directory guibg=#191919 guifg=#719386 gui=none
-hi EndOfBuffer guibg=#191919 guifg=#719386 gui=none
+hi EndOfBuffer guibg=none guifg=#719386 gui=none
 hi Error guibg=#D6461A guifg=#ebdbb2 gui=none
 hi ErrorMsg guibg=#D6461A guifg=#ebdbb2 gui=none
 hi Float guibg=#191919 guifg=#D6461A gui=none
@@ -82,10 +82,10 @@ hi Search guibg=#f6d32d guifg=#191919 gui=none
 hi SignColumn guibg=#191919 guifg=#ebdbb2 gui=none
 hi Special guibg=#191919 guifg=#d3869b gui=none
 hi SpecialKey guibg=#191919 guifg=#f6d32d gui=none
-hi SpellBad guibg=#191919 guifg=#ebdbb2 gui=undercurl guisp=#fe8019
-hi SpellCap guibg=#191919 guifg=#ebdbb2 gui=undercurl guisp=#719386
-hi SpellLocal guibg=#191919 guifg=#ebdbb2 gui=undercurl guisp=#f6d32d
-hi SpellRare guibg=#191919 guifg=#ebdbb2 gui=undercurl guisp=#d3869b
+hi SpellBad guibg=#191919 guifg=none gui=undercurl guisp=#fe8019
+hi SpellCap guibg=#191919 guifg=none gui=undercurl guisp=#719386
+hi SpellLocal guibg=#191919 guifg=none gui=undercurl guisp=#f6d32d
+hi SpellRare guibg=#191919 guifg=none gui=undercurl guisp=#d3869b
 hi Statement guibg=#191919 guifg=#719386 gui=none
 hi StatusLine guibg=#262626 guifg=#ebdbb2 gui=none
 hi StatusLineNC guibg=#262626 guifg=#91876d gui=none
