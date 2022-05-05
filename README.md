@@ -6,7 +6,7 @@ Simple and does not have to have a different color for each different token type
 Theme for (neo)vim included.  
 This is currently only for personal use and better highlighting for a language if I need it (Some things will work out of the box but I optimized it for some languages).
 
-When editing and regenerating use `generate.nim` and run `make` with `nim` language installed.
+When editing and regenerating use `generate.go` and run `make` with `go` language installed.
 
 ![Preview Dark](preview/dark.png)
 ![Preview Light](preview/light.png)
