@@ -5,6 +5,7 @@ import (
 	"log"
 	"os"
 	"sort"
+	"strings"
 )
 
 const (
@@ -123,18 +124,18 @@ func GetHighlights(colors map[string]string) map[string]Highlight {
         "texInputFile": {fg: c("green")},
         "TelescopeBorder": {fg: c("blue")},
         "Directory": {fg: c("blue")},
-        "NvimTreeNormal": {fg: c("fg"), bg: c("tree_bg")},
-        "NvimTreeFolderName": {fg: c("blue"), bg: c("tree_bg")},
-        "NvimTreeOpenedFolderName": {fg: c("blue"), bg: c("tree_bg")},
-        "NvimTreeIndentMarker": {fg: c("bg_2"), bg: c("tree_bg")},
-        "NvimTreeFolderIcon": {fg: c("blue"), bg: c("tree_bg")},
-        "NvimTreeRootFolder": {fg: c("grey_2"), bg: c("tree_bg")},
-        "NvimTreeSpecialFile": {fg: c("green"), bg: c("tree_bg")},
-        "NvimTreeImageFile": {bg: c("tree_bg")},
-        "NvimTreeGitDirty": {fg: c("orange"), bg: c("tree_bg")},
-        "NvimTreeGitNew": {fg: c("yellow"), bg: c("tree_bg")},
-        "NvimTreeGitStaged": {fg: c("green"), bg: c("tree_bg")},
-        "NvimTreeGitDeleted": {fg: c("red"), bg: c("tree_bg")},
+        "NvimTreeNormal": {fg: c("fg"), bg: c("bg_3")},
+        "NvimTreeFolderName": {fg: c("blue"), bg: c("bg_3")},
+        "NvimTreeOpenedFolderName": {fg: c("blue"), bg: c("bg_3")},
+        "NvimTreeIndentMarker": {fg: c("bg_2"), bg: c("bg_3")},
+        "NvimTreeFolderIcon": {fg: c("blue"), bg: c("bg_3")},
+        "NvimTreeRootFolder": {fg: c("grey_2"), bg: c("bg_3")},
+        "NvimTreeSpecialFile": {fg: c("green"), bg: c("bg_3")},
+        "NvimTreeImageFile": {bg: c("bg_3")},
+        "NvimTreeGitDirty": {fg: c("orange"), bg: c("bg_3")},
+        "NvimTreeGitNew": {fg: c("yellow"), bg: c("bg_3")},
+        "NvimTreeGitStaged": {fg: c("green"), bg: c("bg_3")},
+        "NvimTreeGitDeleted": {fg: c("red"), bg: c("bg_3")},
         "LspDiagnosticsError": {fg: c("red")},
         "LspDiagnosticsWarning": {fg: c("yellow")},
         "LspDiagnosticsInformation": {fg: c("blue")},
@@ -199,40 +200,34 @@ func WriteHighlights(f *os.File, highlights map[string]Highlight, colors map[str
 
 }
 
-var dark_colors = map[string]string{
-    "fg": "#ebdbb2",
-    "bg": "#191919",
+// Read color map from env vars (colors.env)
+func ColorsFromEnv(typ string) map[string]string {
+    prefix := "UNICORN_" + typ + "_"
 
-    "green": "#b8bb26",
-    "blue": "#719386",
-    "grey": "#928374",
-    "red": "#D6461A",
-    "purple": "#d3869b",
-    "orange": "#fe8019",
-    "yellow": "#f6d32d",
+    get := func(n string) string {
+        env := prefix + strings.ToUpper(n)
+        val := os.Getenv(env)
+        if val == "" {
+            log.Println("Warning: invalid color: " + n + " using " + env)
+        }
+        return val
+    }
 
-    "bg_2": "#262626", // altered bg, e.g. for colorcolumn
-    "grey_2": "#665b50", // altered grey e.g. linenr
-    "fg_2": "#91876d", // altered fg
-    "tree_bg": "#131313",
-}
-
-var light_colors = map[string]string{
-    "fg": "#3f3f3f",
-    "bg": "#ebdbb2",
-
-    "green": "#909314",
-    "blue": "#3b6a58",
-    "grey": "#928374",
-    "red": "#D6461A",
-    "purple": "#9d6877",
-    "orange": "#d26106",
-    "yellow": "#c5b256",
-    
-    "bg_2": "#dbcca6",
-    "grey_2": "#988d6f",
-    "fg_2": "#91876d",
-    "tree_bg": "#dbcca7",
+    return map[string]string{
+        "fg": get("fg"),
+        "bg": get("bg"),
+        "green": get("green"),
+        "blue": get("blue"),
+        "grey": get("grey"),
+        "red": get("red"),
+        "purple": get("purple"),
+        "orange": get("orange"),
+        "yellow": get("yellow"),
+        "bg_2": get("bg_2"),
+        "grey_2": get("grey_2"),
+        "fg_2": get("fg_2"),
+        "bg_3": get("bg_3"),
+    }
 }
 
 func main() {
@@ -266,8 +261,10 @@ let g:colors_name = "unicorn"
 
     // Write highlights
     f.WriteString("if &background == \"light\"\n")
-    WriteHighlights(f, GetHighlights(light_colors), light_colors, light_colors["bg"], light_colors["fg"])
+    colors := ColorsFromEnv("LIGHT")
+    WriteHighlights(f, GetHighlights(colors), colors, colors["bg"], colors["fg"])
     f.WriteString("\nelse\n")
-    WriteHighlights(f, GetHighlights(dark_colors), dark_colors, dark_colors["bg"], dark_colors["fg"])
+    colors = ColorsFromEnv("DARK")
+    WriteHighlights(f, GetHighlights(colors), colors, colors["bg"], colors["fg"])
     f.WriteString("\nendif\n")
 }

@@ -123,6 +123,7 @@ hi tutorX guibg=#ebdbb2 guifg=#D6461A gui=bold
 
 let g:unicorn_bg = "#ebdbb2"
 let g:unicorn_bg_2 = "#dbcca6"
+let g:unicorn_bg_3 = "#dbcca7"
 let g:unicorn_blue = "#3b6a58"
 let g:unicorn_fg = "#3f3f3f"
 let g:unicorn_fg_2 = "#91876d"
@@ -132,7 +133,6 @@ let g:unicorn_grey_2 = "#988d6f"
 let g:unicorn_orange = "#d26106"
 let g:unicorn_purple = "#9d6877"
 let g:unicorn_red = "#D6461A"
-let g:unicorn_tree_bg = "#dbcca7"
 let g:unicorn_yellow = "#c5b256"
 
 else
@@ -246,6 +246,7 @@ hi tutorX guibg=#191919 guifg=#D6461A gui=bold
 
 let g:unicorn_bg = "#191919"
 let g:unicorn_bg_2 = "#262626"
+let g:unicorn_bg_3 = "#131313"
 let g:unicorn_blue = "#719386"
 let g:unicorn_fg = "#ebdbb2"
 let g:unicorn_fg_2 = "#91876d"
@@ -255,7 +256,6 @@ let g:unicorn_grey_2 = "#665b50"
 let g:unicorn_orange = "#fe8019"
 let g:unicorn_purple = "#d3869b"
 let g:unicorn_red = "#D6461A"
-let g:unicorn_tree_bg = "#131313"
 let g:unicorn_yellow = "#f6d32d"
 
 endif

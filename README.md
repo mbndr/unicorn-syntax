@@ -8,6 +8,8 @@ This is currently only for personal use and better highlighting for a language i
 
 When editing and regenerating use `generate.go` and run `make` with `go` language installed.
 
+For usage in another context all colors are saved centrally in `colors.env`.
+
 ![Preview Dark](preview/dark.png)
 ![Preview Light](preview/light.png)
 
