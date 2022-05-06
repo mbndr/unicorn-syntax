@@ -15,11 +15,11 @@ let g:colors_name = "unicorn"
 if &background == "light"
 hi Boolean guibg=#ebdbb2 guifg=#9d6877 gui=none
 hi Character guibg=#ebdbb2 guifg=#3b6a58 gui=none
-hi ColorColumn guibg=#dbcca6 guifg=#3f3f3f gui=none
+hi ColorColumn guibg=#c4b795 guifg=#3f3f3f gui=none
 hi Comment guibg=#ebdbb2 guifg=#928374 gui=none
 hi Constant guibg=#ebdbb2 guifg=#9d6877 gui=none
 hi CursorLine guibg=none guifg=none gui=none
-hi CursorLineNr guibg=#dbcca6 guifg=#3b6a58 gui=none
+hi CursorLineNr guibg=#c4b795 guifg=#3b6a58 gui=none
 hi DiagnosticError guibg=#ebdbb2 guifg=#D6461A gui=none
 hi DiagnosticUnderline guibg=#ebdbb2 guifg=#3f3f3f gui=underline guisp=#D6461A
 hi DiagnosticUnderlineError guibg=#ebdbb2 guifg=#3f3f3f gui=underline guisp=#D6461A
@@ -35,7 +35,7 @@ hi EndOfBuffer guibg=none guifg=#3b6a58 gui=none
 hi Error guibg=#D6461A guifg=#3f3f3f gui=none
 hi ErrorMsg guibg=#D6461A guifg=#3f3f3f gui=none
 hi Float guibg=#ebdbb2 guifg=#D6461A gui=none
-hi Folded guibg=#dbcca6 guifg=#91876d gui=none
+hi Folded guibg=#c4b795 guifg=#91876d gui=none
 hi Identifier guibg=#ebdbb2 guifg=#3f3f3f gui=none
 hi LineNr guibg=#ebdbb2 guifg=#988d6f gui=none
 hi LspDiagnosticsDefaultError guibg=#ebdbb2 guifg=#D6461A gui=none
@@ -50,12 +50,12 @@ hi LspDiagnosticsUnderlineHint guibg=#ebdbb2 guifg=#3f3f3f gui=underline guisp=#
 hi LspDiagnosticsUnderlineInformation guibg=#ebdbb2 guifg=#3f3f3f gui=underline guisp=#3b6a58
 hi LspDiagnosticsUnderlineWarning guibg=#ebdbb2 guifg=#3f3f3f gui=underline guisp=#c5b256
 hi LspDiagnosticsWarning guibg=#ebdbb2 guifg=#c5b256 gui=none
-hi MatchParen guibg=#dbcca6 guifg=#d26106 gui=bold
+hi MatchParen guibg=#c4b795 guifg=#d26106 gui=bold
 hi ModeMsg guibg=#ebdbb2 guifg=#9d6877 gui=none
 hi MoreMsg guibg=#ebdbb2 guifg=#3b6a58 gui=none
 hi NonText guibg=#ebdbb2 guifg=#909314 gui=none
 hi Normal guibg=#ebdbb2 guifg=#3f3f3f gui=none
-hi NormalFloat guibg=#dbcca6 guifg=#3b6a58 gui=none
+hi NormalFloat guibg=#c4b795 guifg=#3b6a58 gui=none
 hi Number guibg=#ebdbb2 guifg=#d26106 gui=none
 hi NvimInternalError guibg=#D6461A guifg=#ebdbb2 gui=none
 hi NvimTreeFolderIcon guibg=#dbcca7 guifg=#3b6a58 gui=none
@@ -65,12 +65,12 @@ hi NvimTreeGitDirty guibg=#dbcca7 guifg=#d26106 gui=none
 hi NvimTreeGitNew guibg=#dbcca7 guifg=#c5b256 gui=none
 hi NvimTreeGitStaged guibg=#dbcca7 guifg=#909314 gui=none
 hi NvimTreeImageFile guibg=#dbcca7 guifg=#3f3f3f gui=none
-hi NvimTreeIndentMarker guibg=#dbcca7 guifg=#dbcca6 gui=none
+hi NvimTreeIndentMarker guibg=#dbcca7 guifg=#c4b795 gui=none
 hi NvimTreeNormal guibg=#dbcca7 guifg=#3f3f3f gui=none
 hi NvimTreeOpenedFolderName guibg=#dbcca7 guifg=#3b6a58 gui=none
 hi NvimTreeRootFolder guibg=#dbcca7 guifg=#988d6f gui=none
 hi NvimTreeSpecialFile guibg=#dbcca7 guifg=#909314 gui=none
-hi Pmenu guibg=#dbcca6 guifg=#3b6a58 gui=none
+hi Pmenu guibg=#c4b795 guifg=#3b6a58 gui=none
 hi PmenuSel guibg=#91876d guifg=#ebdbb2 gui=none
 hi PreProc guibg=#ebdbb2 guifg=#3b6a58 gui=none
 hi Question guibg=#ebdbb2 guifg=#3b6a58 gui=none
@@ -86,12 +86,12 @@ hi SpellCap guibg=#ebdbb2 guifg=none gui=undercurl guisp=#3b6a58
 hi SpellLocal guibg=#ebdbb2 guifg=none gui=undercurl guisp=#c5b256
 hi SpellRare guibg=#ebdbb2 guifg=none gui=undercurl guisp=#9d6877
 hi Statement guibg=#ebdbb2 guifg=#3b6a58 gui=none
-hi StatusLine guibg=#dbcca6 guifg=#3f3f3f gui=none
-hi StatusLineNC guibg=#dbcca6 guifg=#91876d gui=none
+hi StatusLine guibg=#c4b795 guifg=#3f3f3f gui=none
+hi StatusLineNC guibg=#c4b795 guifg=#91876d gui=none
 hi String guibg=#ebdbb2 guifg=#909314 gui=none
 hi TelescopeBorder guibg=#ebdbb2 guifg=#3b6a58 gui=none
 hi Title guibg=#ebdbb2 guifg=#9d6877 gui=none
-hi Todo guibg=#dbcca6 guifg=#d26106 gui=bold
+hi Todo guibg=#c4b795 guifg=#d26106 gui=bold
 hi Type guibg=#ebdbb2 guifg=#3b6a58 gui=none
 hi Underlined guibg=#ebdbb2 guifg=#3b6a58 gui=underline
 hi VertSplit guibg=#ebdbb2 guifg=#988d6f gui=none
@@ -122,7 +122,7 @@ hi tutorOK guibg=#ebdbb2 guifg=#909314 gui=bold
 hi tutorX guibg=#ebdbb2 guifg=#D6461A gui=bold
 
 let g:unicorn_bg = "#ebdbb2"
-let g:unicorn_bg_2 = "#dbcca6"
+let g:unicorn_bg_2 = "#c4b795"
 let g:unicorn_bg_3 = "#dbcca7"
 let g:unicorn_blue = "#3b6a58"
 let g:unicorn_fg = "#3f3f3f"
